@@ -1,0 +1,50 @@
+﻿<Window x:Class="FrontEndMain.NumberGen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndMain"
+        mc:Ignorable="d"
+        Title="File Number Generator" Height="350" Width="670"
+        WindowStartupLocation="Manual" 
+        Left="250" Top="85"
+        ResizeMode="CanMinimize" Background="#FFDED9D3">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="8" Margin="10,60,0,0" VerticalAlignment="Top" Width="644" Fill="#FFB9B0A8" StrokeThickness="0"/>
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Generate" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,30,0,0" TextWrapping="Wrap" Text="New Part File Number" VerticalAlignment="Top" FontSize="28" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="327"/>
+        <ListBox x:Name="lbMatches" HorizontalAlignment="Left" Height="176" Margin="10,92,0,0" VerticalAlignment="Top" Width="225" BorderBrush="White" SelectionChanged="lbMatches_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding ID}" FontSize="10"/>
+                        <TextBlock Text="{Binding file}" FontSize="12" Margin="35,0,0,0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="239,75,0,0" TextWrapping="Wrap" Text="file number:" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="193" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,75,0,0" TextWrapping="Wrap" Text="matching similar parts" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="193" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQB_Copy" HorizontalAlignment="Left" Height="34" Margin="240,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FFDED9D3" FontSize="22" Background="#FFDED9D3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="347,75,0,0" TextWrapping="Wrap" Text="prefix:" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="85" FontStyle="Italic" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="347,92,0,0" TextWrapping="Wrap" Text="base:" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="85" FontStyle="Italic" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="347,109,0,0" TextWrapping="Wrap" Text="suffix:" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="85" FontStyle="Italic" TextAlignment="Right"/>
+        <TextBlock x:Name="lPrefix" HorizontalAlignment="Left" Margin="440,75,0,0" TextWrapping="Wrap" Text="{Binding lPrefix, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="85" FontStyle="Italic"/>
+        <TextBlock x:Name="lBase" HorizontalAlignment="Left" Margin="440,92,0,0" TextWrapping="Wrap" Text="{Binding lBase, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="85" FontStyle="Italic"/>
+        <TextBlock x:Name="lSuffix" HorizontalAlignment="Left" Margin="440,109,0,0" TextWrapping="Wrap" Text="{Binding lSuffix, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="85" FontStyle="Italic"/>
+        <ListBox x:Name="lbExists" HorizontalAlignment="Left" Height="24" Margin="10,290,0,0" VerticalAlignment="Top" Width="225" BorderBrush="White" SelectionChanged="lbExists_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding ID}" FontSize="10"/>
+                        <TextBlock Text="{Binding file}" FontSize="12" Margin="35,0,0,0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="10,273,0,0" TextWrapping="Wrap" Text="next available file number" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="193" FontStyle="Italic"/>
+        <Button x:Name="btnSelect" Content="select file #" HorizontalAlignment="Left" Margin="516,273,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFD6FDD2" BorderBrush="#FFD6FDD2" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSelect_Click"/>
+
+    </Grid>
+</Window>

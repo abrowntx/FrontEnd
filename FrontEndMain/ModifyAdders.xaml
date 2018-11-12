@@ -1,0 +1,34 @@
+﻿<Window x:Class="FrontEndMain.ModifyAdders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndMain"
+        mc:Ignorable="d"
+        Title="Modify Adders" Height="600" Width="450" Background="#FFEAE7E2"
+        WindowStartupLocation="Manual" 
+        Left="40" Top="10"
+        ResizeMode="NoResize">
+    <Grid>
+        <ListBox x:Name="lbAdders" HorizontalAlignment="Left" Height="407" Margin="10,10,0,0" VerticalAlignment="Top" Width="424" BorderBrush="White" SelectionMode="Single" SelectionChanged="lbAdders_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding ID}" FontSize="10" Margin="0,3,0,0"/>
+                        <TextBlock Text="{Binding AdderName}" FontSize="16" Margin="50,0,0,0"/>
+                        <TextBlock Text="{Binding AdderCost,StringFormat='{}{0:c}'}" FontSize="16" Margin="325,0,0,0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btnSubmit" Content="Save" HorizontalAlignment="Left" Margin="331,534,0,0" VerticalAlignment="Top" Width="103" Height="30" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSubmit_Click"/>
+        <Button x:Name="btnNew" Content="New" HorizontalAlignment="Left" Margin="117,534,0,0" VerticalAlignment="Top" Width="103" Height="30" FontSize="18" FontWeight="Bold" Background="#FFCFCCC7" BorderBrush="#FFCFCCC7" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnNew_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,422,0,0" TextWrapping="Wrap" Text="Adder Name:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBox x:Name="tbAdderName" HorizontalAlignment="Left" Height="23" Margin="10,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" BorderBrush="White" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,473,0,0" TextWrapping="Wrap" Text="Adder Cost:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBox x:Name="tbAdderPrice" HorizontalAlignment="Left" Height="23" Margin="10,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" BorderBrush="White" FontSize="14"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="224,534,0,0" VerticalAlignment="Top" Width="103" Height="30" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelete_Click"/>
+        <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="10,534,0,0" VerticalAlignment="Top" Width="103" Height="30" FontSize="18" FontWeight="Bold" Background="#FFC1D9DC" BorderBrush="#FFC1D9DC" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btn_clear_Click"/>
+
+    </Grid>
+</Window>

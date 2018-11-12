@@ -1,0 +1,23 @@
+﻿<Window x:Class="FrontEndMain.CreateQuote_Misc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndMain"
+        mc:Ignorable="d"
+        Title="Create Quote - Misc." Height="600" Width="950"
+        WindowStartupLocation="Manual" 
+        Left="165" Top="55"
+        ResizeMode="CanMinimize" Background="#FFEAE7E2">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Generate" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="New Quote" VerticalAlignment="Top" FontSize="28" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Miscellaneous" VerticalAlignment="Top" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="350" Margin="584,12,0,0" TextAlignment="Right"/>
+        <Rectangle HorizontalAlignment="Left" Height="8" Margin="10,64,0,0" VerticalAlignment="Top" Width="924" Fill="#FFC3B7AF" StrokeThickness="0">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="0" Direction="270" ShadowDepth="0" Color="#7F000000"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+    </Grid>
+</Window>
