@@ -46,3 +46,6 @@ C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\o
 C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Release\PartsLists.g.cs
 C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Release\PartsLists.baml
 C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Release\PartsLists_MicaBand.g.cs
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Release\RecallQuote2.g.cs
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Release\PartsLists_MicaBand.baml
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Release\RecallQuote2.baml
