@@ -63,7 +63,7 @@
         <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbManualAdder" ToolTip="Enter a manual additional dollar amount to be applied per heater after quantity calculations are done" HorizontalAlignment="Left" Height="23" Margin="681,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbManualAdder_GotFocus"/>
         <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbSpecials" HorizontalAlignment="Left" Height="129" Margin="681,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" BorderBrush="White" FontSize="14" GotFocus="tbSpecials_GotFocus"/>
         <Button x:Name="btnPrecalculate" Content="Precalculate" HorizontalAlignment="Left" Margin="653,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFAFD4E2" BorderBrush="#FFAFD4E2" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnPrecalculate_Click"/>
-        <Button x:Name="btnSaveQuote" Content="Save Quote" HorizontalAlignment="Left" Margin="796,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click"/>
+        <Button x:Name="btnSaveQuote" Content="Save Quote" HorizontalAlignment="Left" Margin="796,523,0,7" Width="138" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click"/>
         <Button x:Name="btnClearForm" Content="Clear Form" HorizontalAlignment="Left" Margin="155,524,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClearForm_Click"/>
         <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="12,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFCFCCC7" BorderBrush="#FFCFCCC7" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click"/>
         <TextBlock x:Name="lq1" HorizontalAlignment="Left" Margin="126,151,0,0" TextWrapping="Wrap" Text="{Binding Path = lq1, Mode = TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
@@ -88,8 +88,8 @@
                 <DataTemplate>
                     <Grid>
                         <TextBlock Text="{Binding AdderName}" FontSize="14" Margin="0,0,0,0"></TextBlock>
-                    </Grid> 
-                </DataTemplate> 
+                    </Grid>
+                </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="454,300,0,0" TextWrapping="Wrap" Text="Adders:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="94"/>

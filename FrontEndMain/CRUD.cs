@@ -33,6 +33,10 @@ namespace FrontEndMain
             public int by { get; set; }
             public int bse { get; set; }
             public int suffix { get; set; }
+            public int g1 { get; set; }
+            public int g2 { get; set; }
+            public int g3 { get; set; }
+            public int g4 { get; set; }
             public int termloc { get; set; }
             public int termdet { get; set; }
             public int wiring { get; set; }

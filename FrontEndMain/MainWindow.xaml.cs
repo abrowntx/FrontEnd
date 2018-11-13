@@ -39,8 +39,8 @@ namespace FrontEndMain
 
         private void btnRecallQuote_Click(object sender, RoutedEventArgs e)
         {
-            RecallQuote RecallQuote = new RecallQuote();
-            RecallQuote.ShowDialog();
+            RecallQuote2 RecallQuote2 = new RecallQuote2();
+            RecallQuote2.ShowDialog();
         }
 
         private void btnNewQuote_Click(object sender, RoutedEventArgs e)

@@ -36,14 +36,6 @@
                         <TextBlock Text="{Binding Cust}" FontSize="12" Margin="35,0,0,0"/>
                         <TextBlock Text="{Binding dte}" FontSize="12" Margin="250,0,0,0"/>
                         <TextBlock Text="{Binding pn}" FontSize="12" Margin="400,0,0,0"/>
-                        <TextBlock Text="{Binding 1}" FontSize="12" Margin="500,0,0,0"/>
-                        <TextBlock Text="{Binding 2}" FontSize="12" Margin="550,0,0,0"/>
-                        <TextBlock Text="{Binding 3}" FontSize="12" Margin="600,0,0,0"/>
-                        <TextBlock Text="{Binding 4}" FontSize="12" Margin="650,0,0,0"/>
-                        <TextBlock Text="{Binding 5}" FontSize="12" Margin="700,0,0,0"/>
-                        <TextBlock Text="{Binding 6}" FontSize="12" Margin="750,0,0,0"/>
-                        <TextBlock Text="{Binding 7}" FontSize="12" Margin="800,0,0,0"/>
-                        <TextBlock Text="{Binding 8}" FontSize="12" Margin="850,0,0,0"/>
                         <TextBlock Text="{Binding filename}" FontSize="12" Margin="1110,0,0,0"/>
                     </Grid>
                 </DataTemplate>
