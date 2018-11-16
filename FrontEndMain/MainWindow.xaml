@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndMain"
         mc:Ignorable="d"
-        Title="EZHeat Frontend Application" Height="680" Width="1250" Background="#FFF9F9F9"
+        Title="EZHeat Frontend Application" Height="680" Width="1250" Background="#FFFBFBF2"
         WindowStartupLocation="Manual" 
         Left="15" Top="0"
         ResizeMode="CanResize"
@@ -20,44 +20,44 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Menu Background="#FFC7C7C7" Height="35" VerticalAlignment="Top" Grid.ColumnSpan="3">
-            <MenuItem Header="_File" Margin="0" Width="50" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7">
-                <MenuItem x:Name="HClose" Header="_Close App" FontSize="14" Background="#FFC7C7C7" Click="HClose_Click" BorderBrush="#FFC7C7C7"/>
+        <Menu Background="#FFE5E6E4" Height="35" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <MenuItem Header="_File" Margin="0" Width="50" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4">
+                <MenuItem x:Name="HClose" Header="_Close App" FontSize="14" Background="#FFE5E6E4" Click="HClose_Click" BorderBrush="#FFE5E6E4"/>
             </MenuItem>
-            <MenuItem Header="_Quoting" Margin="0" Width="75" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7">
-                <MenuItem Header="_Create a Quote" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7">
-                    <MenuItem x:Name="HCreateMica" Header="_Mica Band" Width="125" FontSize="14" Background="#FFC7C7C7" Click="HCreateMica_Click" BorderBrush="#FFC7C7C7"/>
-                    <MenuItem x:Name="HCreateStrip" Header="_Mica Strip" FontSize="14" Background="#FFC7C7C7" Click="HCreateStrip_Click"  BorderBrush="#FFC7C7C7"/>
-                    <MenuItem x:Name="HCreateCeramic" Header="_Ceramic" FontSize="14" Background="#FFC7C7C7" Click="HCreateCeramic_Click" BorderBrush="#FFC7C7C7"/>
-                    <MenuItem x:Name="HCreateCart" Header="_Cartridge" FontSize="14" Background="#FFC7C7C7" Click="HCreateCart_Click" BorderBrush="#FFC7C7C7"/>
-                    <MenuItem x:Name="HCreateMisc" Header="_Misc." FontSize="14" Background="#FFC7C7C7" Click="HCreateMisc_Click"  BorderBrush="#FFC7C7C7"/>
+            <MenuItem Header="_Quoting" Margin="0" Width="75" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4">
+                <MenuItem Header="_Create a Quote" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4">
+                    <MenuItem x:Name="HCreateMica" Header="_Mica Band" Width="125" FontSize="14" Background="#FFE5E6E4" Click="HCreateMica_Click" BorderBrush="#FFE5E6E4"/>
+                    <MenuItem x:Name="HCreateStrip" Header="_Mica Strip" FontSize="14" Background="#FFE5E6E4" Click="HCreateStrip_Click"  BorderBrush="#FFE5E6E4"/>
+                    <MenuItem x:Name="HCreateCeramic" Header="_Ceramic" FontSize="14" Background="#FFE5E6E4" Click="HCreateCeramic_Click" BorderBrush="#FFE5E6E4"/>
+                    <MenuItem x:Name="HCreateCart" Header="_Cartridge" FontSize="14" Background="#FFE5E6E4" Click="HCreateCart_Click" BorderBrush="#FFC7C7C7"/>
+                    <MenuItem x:Name="HCreateMisc" Header="_Misc." FontSize="14" Background="#FFE5E6E4" Click="HCreateMisc_Click"  BorderBrush="#FFE5E6E4"/>
                 </MenuItem>
-                <MenuItem x:Name="HRecallQuote" Header="_Recall a Quote" FontSize="14" Background="#FFC7C7C7" Click="HRecallQuote_Click" BorderBrush="#FFC7C7C7"/>
+                <MenuItem x:Name="HRecallQuote" Header="_Recall a Quote" FontSize="14" Background="#FFE5E6E4" Click="HRecallQuote_Click" BorderBrush="#FFC7C7C7"/>
             </MenuItem>
-            <MenuItem Header="_Configuration" Margin="0" Width="110" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7">
-                <MenuItem x:Name="HConfig" Header="_Configuration" Click="HConfig_Click" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7"/>
-                <MenuItem x:Name="HManageAdders" Header="_Manage Adders" FontSize="14" Background="#FFC7C7C7" Click="HManageAdders_Click" BorderBrush="#FFC7C7C7"/>
+            <MenuItem Header="_Configuration" Margin="0" Width="110" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4">
+                <MenuItem x:Name="HConfig" Header="_Configuration" Click="HConfig_Click" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4"/>
+                <MenuItem x:Name="HManageAdders" Header="_Manage Adders" FontSize="14" Background="#FFE5E6E4" Click="HManageAdders_Click" BorderBrush="#FFE5E6E4"/>
             </MenuItem>
-            <MenuItem Header="_Customer Management" Margin="0" Width="170" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7">
-                <MenuItem x:Name="ManageCust" Header="_Manage Customers" FontSize="14" Background="#FFC7C7C7" Click="ManageCust_Click" BorderBrush="#FFC7C7C7"/>
+            <MenuItem Header="_Customer Management" Margin="0" Width="170" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4">
+                <MenuItem x:Name="ManageCust" Header="_Manage Customers" FontSize="14" Background="#FFE5E6E4" Click="ManageCust_Click" BorderBrush="#FFE5E6E4"/>
             </MenuItem>
-            <MenuItem Header="_Help" Margin="0" Width="50" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7">
-                <MenuItem x:Name="hDoc" Header="_Documentation" FontSize="14" Background="#FFC7C7C7" BorderBrush="#FFC7C7C7"/>
+            <MenuItem Header="_Help" Margin="0" Width="50" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4">
+                <MenuItem x:Name="hDoc" Header="_Documentation" FontSize="14" Background="#FFE5E6E4" BorderBrush="#FFE5E6E4"/>
             </MenuItem>
         </Menu>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Height="40" Margin="10,37,0,572" TextWrapping="Wrap" Width="1222" FontSize="24" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Grid.ColumnSpan="3"><Run Text="SALES, QUOTING AND "/><Run Text="ORDER GENERATION SYSTEM"/></TextBlock>
 
-        <Button x:Name="btnCreateSO" Grid.Column="2" Grid.Row="0" Margin="99,87,0,0" Content="Create Sales Order" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FF5CB85C" BorderBrush="#FF5CB85C" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnRecallQuote" Grid.Column="0" Grid.Row="0" Content="Recall Existing Quote" HorizontalAlignment="Left" Margin="99,378,0,0" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FF428BCA" BorderBrush="#FF428BCA" BorderThickness="0" Click="btnRecallQuote_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnCustManager" Grid.Column="1" Grid.Row="0" Margin="99,87,0,0" Content="Customer Manager" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FFC34A47" BorderBrush="#FFC34A47" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnCustManager_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnRecallQuote_Copy" Grid.Column="0" Grid.Row="0" Content="Quote Manager" HorizontalAlignment="Left" Margin="99,87,0,0" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FF428BCA" BorderBrush="#FF428BCA" BorderThickness="0" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCreateSO" Grid.Column="2" Grid.Row="0" Margin="99,87,0,0" Content="Create Sales Order" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF4E7B90" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnRecallQuote" Grid.Column="0" Grid.Row="0" Content="Recall Existing Quote" HorizontalAlignment="Left" Margin="99,380,0,0" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF904E78" BorderBrush="{x:Null}" BorderThickness="0" Click="btnRecallQuote_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCustManager" Grid.Column="1" Grid.Row="0" Margin="99,87,0,0" Content="Customer Manager" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF4E5790" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnCustManager_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnRecallQuote_Copy" Grid.Column="0" Grid.Row="0" Content="Quote Manager" HorizontalAlignment="Left" Margin="99,87,0,0" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF904E55" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FFF9F9F9"/>
 
-        <Button x:Name="btnManageSO" Grid.Column="2" Grid.Row="0" Margin="99,187,0,0" Content="Manage Sales Orders" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FF5CB85C" BorderBrush="#FF5CB85C" BorderThickness="0" Click="btnRecallQuote_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnCreateMicaQuote" Grid.Column="0" Grid.Row="0" Content="Create Mica Band Quote" HorizontalAlignment="Left" Margin="127,138,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF5BC0DE" BorderBrush="#FF5BC0DE" BorderThickness="0" Click="btnCreateMicaQuote_Click" FontStyle="Italic" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnCreateCartridgeQuote" Grid.Column="0" Grid.Row="0" Content="Create Cartridge Quote" HorizontalAlignment="Left" Margin="127,214,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF4899B1" BorderBrush="#FF4899B1" BorderThickness="0" Click="btnCreateCartridgeQuote_Click" FontStyle="Italic" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnRecallQuote_Copy3" Grid.Column="0" Grid.Row="0" Content="Create Ceramic Quote" HorizontalAlignment="Left" Margin="127,252,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF367385" BorderBrush="#FF367385" BorderThickness="0" FontStyle="Italic" Click="btnRecallQuote_Copy3_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnRecallQuote_Copy4" Grid.Column="0" Grid.Row="0" Content="Create Misc. Quote" HorizontalAlignment="Left" Margin="127,328,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF1B3942" BorderBrush="#FF1B3942" BorderThickness="0" FontStyle="Italic" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnCreateMicaQuote_Copy" Grid.Column="0" Grid.Row="0" Content="Create Mica Strip Quote" HorizontalAlignment="Left" Margin="127,176,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF5BC0DE" BorderBrush="#FF5BC0DE" BorderThickness="0" FontStyle="Italic" Click="btnCreateMicaQuote_Copy_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnManageSO" Grid.Column="2" Grid.Row="0" Margin="99,192,0,0" Content="Manage Sales Orders" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF4E907B" BorderBrush="{x:Null}" BorderThickness="0" Click="btnRecallQuote_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCreateMicaQuote" Grid.Column="0" Grid.Row="0" Content="Create Mica Band Quote" HorizontalAlignment="Left" Margin="127,138,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FFB2656D" BorderBrush="{x:Null}" BorderThickness="0" Click="btnCreateMicaQuote_Click" FontStyle="Italic" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCreateCartridgeQuote" Grid.Column="0" Grid.Row="0" Content="Create Cartridge Quote" HorizontalAlignment="Left" Margin="127,214,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FFB2656D" BorderBrush="{x:Null}" BorderThickness="0" Click="btnCreateCartridgeQuote_Click" FontStyle="Italic" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnRecallQuote_Copy3" Grid.Column="0" Grid.Row="0" Content="Create Ceramic Quote" HorizontalAlignment="Left" Margin="127,252,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FFB2656D" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnRecallQuote_Copy3_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnRecallQuote_Copy4" Grid.Column="0" Grid.Row="0" Content="Create Misc. Quote" HorizontalAlignment="Left" Margin="127,328,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FFB2656D" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCreateMicaQuote_Copy" Grid.Column="0" Grid.Row="0" Content="Create Mica Strip Quote" HorizontalAlignment="Left" Margin="127,176,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FFB2656D" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnCreateMicaQuote_Copy_Click" Foreground="#FFF9F9F9"/>
 
         <Image Grid.Column="0" Grid.Row="0" Source="Documents.png" Stretch="None" Margin="43,82,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80"/>
         <Image Grid.Column="2" Grid.Row="0" Source="Browsers.png" Stretch="None" Margin="43,182,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80"/>
@@ -65,20 +65,20 @@
         <Image Grid.Column="2" Grid.Row="0" Source="Network.png" Stretch="None" Margin="43,82,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80"/>
         <Image Grid.Column="0" Grid.Row="0" Source="Note.png" Stretch="None" Margin="43,373,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80"/>
         <Image Margin="376,635,10,10" Source="More.png" Stretch="None" Grid.Column="2" MouseLeftButtonUp="Image_MouseLeftButtonUp" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-        <Button x:Name="btnModAdders" Grid.Column="1" Grid.Row="0" Content="Modify Adders List" HorizontalAlignment="Left" Margin="119,337,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF9C3B38" BorderBrush="#FF9C3B38" BorderThickness="0" FontStyle="Italic" Click="btnModAdders_Click" RenderTransformOrigin="0.758,-1.97" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnRecallQuote_Copy1" Grid.Column="1" Grid.Row="0" Content="Settings" HorizontalAlignment="Left" Margin="92,287,0,0" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FFC34A47" BorderBrush="#FFC34A47" BorderThickness="0" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnModAdders" Grid.Column="1" Grid.Row="0" Content="Modify Adders List" HorizontalAlignment="Left" Margin="119,342,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FF6082AA" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnModAdders_Click" RenderTransformOrigin="0.758,-1.97" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnRecallQuote_Copy1" Grid.Column="1" Grid.Row="0" Content="Settings" HorizontalAlignment="Left" Margin="99,294,0,0" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF4E6C90" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FFF9F9F9"/>
         <Image Grid.Column="1" Grid.Row="0" Margin="36,282,0,0" Source="4 by 4 Grid.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button x:Name="btnSystemConfig" Grid.Column="1" Grid.Row="0" Content="System Configuration" HorizontalAlignment="Left" Margin="119,375,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF8C3532" BorderBrush="#FF8C3532" BorderThickness="0" FontStyle="Italic" RenderTransformOrigin="0.758,-1.97" Click="btnSystemConfig_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnManageSO_Copy" Grid.Column="2" Grid.Row="0" Margin="99,287,0,0" Content="Scheduling" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FF5CB85C" BorderBrush="#FF5CB85C" BorderThickness="0" Click="btnRecallQuote_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnSystemConfig" Grid.Column="1" Grid.Row="0" Content="System Configuration" HorizontalAlignment="Left" Margin="119,378,0,0" VerticalAlignment="Top" Width="252" Height="36" FontSize="18" Background="#FF6082AA" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" RenderTransformOrigin="0.758,-1.97" Click="btnSystemConfig_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnManageSO_Copy" Grid.Column="2" Grid.Row="0" Margin="99,287,0,0" Content="Scheduling" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF4E904E" BorderBrush="{x:Null}" BorderThickness="0" Click="btnRecallQuote_Click" Foreground="#FFF9F9F9"/>
         <Image  Grid.Column="2" Grid.Row="0" Stretch="None" Margin="45,282,0,0" Source="Notebook.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80"/>
-        <Button x:Name="btnTCQuote" Grid.Column="0" Grid.Row="0" Content="Create Thermocouple Quote" HorizontalAlignment="Left" Margin="127,290,0,0" VerticalAlignment="Top" Width="252" Height="33" FontSize="18" Background="#FF2D606F" BorderBrush="#FF2D606F" BorderThickness="0" FontStyle="Italic" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnPartsList" Grid.Column="0" Grid.Row="0" Content="Parts Lists" HorizontalAlignment="Left" Margin="99,458,0,0" VerticalAlignment="Top" Width="292" Height="45" FontSize="18" FontWeight="Bold" Background="#FF428BCA" BorderBrush="#FF428BCA" BorderThickness="0" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnTCQuote" Grid.Column="0" Grid.Row="0" Content="Create Thermocouple Quote" HorizontalAlignment="Left" Margin="127,290,0,0" VerticalAlignment="Top" Width="252" Height="38" FontSize="18" Background="#FFB2656D" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnPartsList" Grid.Column="0" Grid.Row="0" Content="Parts Lists" HorizontalAlignment="Left" Margin="99,461,0,0" VerticalAlignment="Top" Width="292" Height="51" FontSize="18" FontWeight="Bold" Background="#FF5D4E90" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FFF9F9F9"/>
         <Image Grid.Column="0" Grid.Row="0" Source="Note.png" Stretch="None" Margin="43,453,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80"/>
-        <Button x:Name="btnMicaBand" Grid.Column="0" Grid.Row="0" Content="BH" HorizontalAlignment="Left" Margin="127,510,0,0" VerticalAlignment="Top" Width="81" Height="33" FontSize="18" Background="#FF5BC0DE" BorderBrush="#FF5BC0DE" BorderThickness="0" FontStyle="Italic" Click="btnMicaBand_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnMicaStrip" Grid.Column="0" Grid.Row="0" Content="SH" HorizontalAlignment="Left" Margin="213,510,0,0" VerticalAlignment="Top" Width="81" Height="33" FontSize="18" Background="#FF5BC0DE" BorderBrush="#FF5BC0DE" BorderThickness="0" FontStyle="Italic" Click="btnMicaStrip_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnCeramic" Grid.Column="0" Grid.Row="0" Content="CB" HorizontalAlignment="Left" Margin="298,510,0,0" VerticalAlignment="Top" Width="81" Height="33" FontSize="18" Background="#FF4899B1" BorderBrush="#FF4899B1" BorderThickness="0" FontStyle="Italic" Click="btnCeramic_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnCart" Grid.Column="0" Grid.Row="0" Content="C" HorizontalAlignment="Left" Margin="127,548,0,0" VerticalAlignment="Top" Width="81" Height="33" FontSize="18" Background="#FF367385" BorderBrush="#FF367385" BorderThickness="0" FontStyle="Italic" Click="btnCart_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnTC" Grid.Column="0" Grid.Row="0" Content="TC" HorizontalAlignment="Left" Margin="213,548,0,0" VerticalAlignment="Top" Width="81" Height="33" FontSize="18" Background="#FF2D606F" BorderBrush="#FF2D606F" BorderThickness="0" FontStyle="Italic" Click="btnTC_Click" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnMisc" Grid.Column="0" Grid.Row="0" Content="Misc." HorizontalAlignment="Left" Margin="298,548,0,0" VerticalAlignment="Top" Width="81" Height="33" FontSize="18" Background="#FF1B3942" BorderBrush="#FF1B3942" BorderThickness="0" FontStyle="Italic" Click="btnMisc_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnMicaBand" Grid.Column="0" Grid.Row="0" Content="BH" HorizontalAlignment="Left" Margin="127,510,0,0" VerticalAlignment="Top" Width="86" Height="43" FontSize="18" Background="#FF7465A8" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnMicaBand_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnMicaStrip" Grid.Column="0" Grid.Row="0" Content="SH" HorizontalAlignment="Left" Margin="213,510,0,0" VerticalAlignment="Top" Width="85" Height="43" FontSize="18" Background="#FF7465A8" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnMicaStrip_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCeramic" Grid.Column="0" Grid.Row="0" Content="CB" HorizontalAlignment="Left" Margin="298,510,0,0" VerticalAlignment="Top" Width="85" Height="43" FontSize="18" Background="#FF7465A8" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnCeramic_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnCart" Grid.Column="0" Grid.Row="0" Content="C" HorizontalAlignment="Left" Margin="127,553,0,0" VerticalAlignment="Top" Width="86" Height="43" FontSize="18" Background="#FF7465A8" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnCart_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnTC" Grid.Row="0" Content="TC" HorizontalAlignment="Left" Margin="213,553,0,0" VerticalAlignment="Top" Width="85" Height="43" FontSize="18" Background="#FF7465A8" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnTC_Click" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnMisc" Grid.Row="0" Content="Misc." HorizontalAlignment="Left" Margin="298,553,0,0" VerticalAlignment="Top" Width="85" Height="43" FontSize="18" Background="#FF7465A8" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnMisc_Click" Foreground="#FFF9F9F9"/>
     </Grid>
 </Window>

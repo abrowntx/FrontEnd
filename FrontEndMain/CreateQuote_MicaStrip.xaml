@@ -8,16 +8,16 @@
         Title="CreateQuote_MicaStrip" Height="600" Width="950"
         WindowStartupLocation="Manual" 
         Left="165" Top="55"
-        ResizeMode="CanMinimize" Background="#FFEAE7E2" Activated="Window_Activated">
+        ResizeMode="CanMinimize" Background="#FFE5E6E4" Activated="Window_Activated">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Generate" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="New Quote" VerticalAlignment="Top" FontSize="28" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mica Strip" VerticalAlignment="Top" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="350" Margin="584,12,0,0" TextAlignment="Right"/>
-        <Rectangle HorizontalAlignment="Left" Height="8" Margin="10,64,0,0" VerticalAlignment="Top" Width="924" Fill="#FFC3B7AF" StrokeThickness="0">
+        <Rectangle HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="944" Fill="#FFC0D8C8" StrokeThickness="0">
             <Rectangle.Effect>
                 <DropShadowEffect BlurRadius="0" Direction="270" ShadowDepth="0" Color="#7F000000"/>
             </Rectangle.Effect>
         </Rectangle>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Generate" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="New Quote" VerticalAlignment="Top" FontSize="28" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mica Strip" VerticalAlignment="Top" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="350" Margin="584,12,0,0" TextAlignment="Right"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,96,0,0" TextWrapping="Wrap" Text="Customer:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
         <TextBlock HorizontalAlignment="Left" Margin="-25,189,0,0" TextWrapping="Wrap" Text="Quantities" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="91" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
@@ -29,9 +29,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="myComboBox" HorizontalAlignment="Left" Margin="8,119,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="myComboBox_SelectionChanged">
-
-        </ComboBox>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="myComboBox" HorizontalAlignment="Left" Margin="8,119,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="myComboBox_SelectionChanged"/>
         <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty1" HorizontalAlignment="Left" Height="23" Margin="41,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty1_GotFocus"/>
         <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty2" HorizontalAlignment="Left" Height="23" Margin="41,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty2_GotFocus"/>
         <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty3" HorizontalAlignment="Left" Height="23" Margin="41,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty3_GotFocus"/>
@@ -86,13 +84,13 @@
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="454,248,0,0" TextWrapping="Wrap" Text="Adders:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="94"/>
         <Button x:Name="btnAdd" Content="+" HorizontalAlignment="Left" Margin="624,250,0,0" VerticalAlignment="Top" Width="23" Height="20" FontSize="12" Background="#FFCFCCC7" BorderBrush="#FFCFCCC7" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnAdd_Click" FontWeight="Bold"/>
-        <Button x:Name="btnDelAdd" ToolTip="Clear All Adders!" Content="x" HorizontalAlignment="Left" Margin="601,250,0,0" VerticalAlignment="Top" Width="23" Height="20" FontSize="12" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelAdd_Click"/>
+        <Button x:Name="btnDelAdd" ToolTip="Clear All Adders!" Content="x" HorizontalAlignment="Left" Margin="595,247,0,0" VerticalAlignment="Top" Width="29" Height="26" FontSize="12" Background="#FF9C5151" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelAdd_Click" Foreground="#FFE5E6E4"/>
         <TextBlock HorizontalAlignment="Left" Margin="232,300,0,0" TextWrapping="Wrap" Text="Watts:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="94"/>
         <TextBlock HorizontalAlignment="Left" Margin="331,300,0,0" TextWrapping="Wrap" Text="Volts:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="94"/>
-        <Button x:Name="btnPrecalculate" Content="Precalculate" HorizontalAlignment="Left" Margin="653,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFAFD4E2" BorderBrush="#FFAFD4E2" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnPrecalculate_Click"/>
-        <Button x:Name="btnSaveQuote" Content="Save Quote" HorizontalAlignment="Left" Margin="796,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click"/>
-        <Button x:Name="btnClearForm" Content="Clear Form" HorizontalAlignment="Left" Margin="155,524,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClearForm_Click"/>
-        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="12,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFCFCCC7" BorderBrush="#FFCFCCC7" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click"/>
+        <Button x:Name="btnPrecalculate" Content="Precalculate" HorizontalAlignment="Left" Margin="653,523,0,0" VerticalAlignment="Top" Width="143" Height="41" FontSize="18" FontWeight="Bold" Background="#FF6A8195" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnPrecalculate_Click" Foreground="#FFE5E6E4"/>
+        <Button x:Name="btnSaveQuote" Content="Save Quote" HorizontalAlignment="Left" Margin="793,523,0,0" VerticalAlignment="Top" Width="144" Height="41" FontSize="18" FontWeight="Bold" Background="#FF689564" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click" Foreground="#FFE5E6E4"/>
+        <Button x:Name="btnClearForm" Content="Clear Form" HorizontalAlignment="Left" Margin="150,524,0,0" VerticalAlignment="Top" Width="143" Height="41" FontSize="18" FontWeight="Bold" Background="#FF9C5151" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClearForm_Click" Foreground="#FFE5E6E4"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="12,523,0,0" VerticalAlignment="Top" Width="141" Height="41" FontSize="18" FontWeight="Bold" Background="#FFCFCCC7" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="796,473,0,0" TextWrapping="Wrap" Text="SMT:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="148"/>
         <TextBox x:Name="tbSMT" HorizontalAlignment="Left" Height="23" Margin="796,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" BorderBrush="White" FontSize="14" GotFocus="tbSMT_GotFocus"/>
         <TextBlock x:Name="lPN" HorizontalAlignment="Left" Margin="242,31,0,0" TextWrapping="Wrap" Text="{Binding lPN, Mode=TwoWay}" VerticalAlignment="Top" FontSize="28" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="337"/>

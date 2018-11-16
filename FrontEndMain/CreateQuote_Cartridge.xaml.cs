@@ -313,7 +313,7 @@ namespace FrontEndMain
 
                     connection1.Open();
                     // INSERT A NEW RECORD FOR THE QUOTE
-                    string CmdLine1 = "INSERT INTO CartQuotes (Cust,dte,q1,q2,q3,q4,p1,p2,p3,p4,dia,length,termstyle,leads,leadcov,watts,volts,multi,adder,notes,smt,filename,ad1,ad1p,ad2,ad2p,ad3,ad3p,ad4,ad4p,ad5,ad5p,ad6,ad6p,pn) " +
+                    string CmdLine1 = "INSERT INTO CartQuotes (cust,dte,q1,q2,q3,q4,p1,p2,p3,p4,dia,length,termstyle,leads,leadcov,watts,volts,multi,adder,notes,smt,filename,ad1,ad1p,ad2,ad2p,ad3,ad3p,ad4,ad4p,ad5,ad5p,ad6,ad6p,pn) " +
                         "VALUES ('" + myComboBox.Text + "','" + DateTime.Now + "'," + q1 + "," + q2 + "," + q3 + "," + q4 + "," + vari.p1 + "," + vari.p2 + "," + vari.p3 + "," + vari.p4 + "," +
                         " '" + cmbDiameter.Text + "'," + length + ",'" + cmbTermStyle.Text + "'," + leads + "," + leadcov + "," + watt + "," + volt + "," + multi + "," + adder + ", '" + tbSpecials.Text + "','" + tbSMT.Text + "'," +
                         " '" + vari.SavedPDFDir + "','" + ad1 + "'," + ad1p + ",'" + ad2 + "'," + ad2p + ",'" + ad3 + "'," + ad3p + ",'" + ad4 + "'," + ad4p + ",'" + ad5 + "'," + ad5p + ",'" + ad6 + "'," + ad6p + ",'" + vari.pn + "'); ";

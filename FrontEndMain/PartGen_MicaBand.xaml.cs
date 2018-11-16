@@ -31,6 +31,7 @@ namespace FrontEndMain
         {
             InitializeComponent();
             Startup();
+            
 
             //Populate wiring style
             cmbWiring.SelectedIndex = 0;
@@ -49,8 +50,28 @@ namespace FrontEndMain
             cmbTermLoc.Items.Add("Standard");
             cmbTermLoc.Items.Add("Degree");
 
+            //Populate Stamp Style
+            cmbStamp.Items.Add("(Standard) EZ Heat, EZ Number, W/V/D");
+            cmbStamp.Items.Add("No EZ Heat, EZ Number, W/V/D");
+            cmbStamp.Items.Add("Customer Name, EZ Number, W/V/D");
+            cmbStamp.Items.Add("Customer Name, Customer Number, W/V/D");
+            cmbStamp.Items.Add("No EZ Heat, Customer Number, W/V/D");
+
             vari.filegen = false;
             vari.filenumber = null;
+
+            
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+
+            tbBH.Text = vari.filenumber;
+
+            vari.filegen = false;
+            vari.filenumber = null;
+
+            CustomerDetails();
         }
 
         private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -67,25 +88,24 @@ namespace FrontEndMain
 
         private void Startup()
         {
-            tbID.Text = vari.rQD[0].ToString();
-            tbCust.Text = vari.rQD[1].ToString();
-            tbDate.Text = vari.rQD[2].ToString();
-            tbPN.Text = vari.rQD[29].ToString();
-            tbSeg.Text = vari.rQD[11].ToString();
-            tbLock.Text = vari.rQD[12].ToString();
-            tbDia.Text = vari.rQD[13].ToString();
-            tbWid.Text = vari.rQD[14].ToString();
-            tbTerm.Text = vari.rQD[17].ToString();
-            tbWatts.Text = vari.rQD[15].ToString();
-            tbVolts.Text = vari.rQD[16].ToString();
-            tbLeads.Text = vari.rQD[18].ToString();
-            tbLeadcov.Text = vari.rQD[19].ToString();
-            tbTermLoc.Text = vari.rQD[21].ToString();
-            cmbTermLoc.Text = vari.rQD[20].ToString();
-            tbNotes.Text = vari.rQD[25].ToString();
-            tbDesc.Text = vari.rQD[36].ToString();
-            cmbTermLoc.Text = vari.rQD[37].ToString();
-            if (vari.rQD[37].ToString() == "Standard")
+            tbID.Text = vari.RQD.Tables[0].Rows[0][0].ToString();
+            tbCust.Text = vari.RQD.Tables[0].Rows[0][1].ToString();
+            tbDate.Text = vari.RQD.Tables[0].Rows[0][2].ToString();
+            tbPN.Text = vari.RQD.Tables[0].Rows[0][45].ToString();
+            tbSeg.Text = vari.RQD.Tables[0].Rows[0][12].ToString();
+            tbLock.Text = vari.RQD.Tables[0].Rows[0][13].ToString();
+            tbDia.Text = vari.RQD.Tables[0].Rows[0][14].ToString();
+            tbWid.Text = vari.RQD.Tables[0].Rows[0][15].ToString();
+            tbTerm.Text = vari.RQD.Tables[0].Rows[0][18].ToString();
+            tbWatts.Text = vari.RQD.Tables[0].Rows[0][16].ToString();
+            tbVolts.Text = vari.RQD.Tables[0].Rows[0][17].ToString();
+            tbLeads.Text = vari.RQD.Tables[0].Rows[0][19].ToString();
+            tbLeadcov.Text = vari.RQD.Tables[0].Rows[0][20].ToString();
+            tbTermLoc.Text = vari.RQD.Tables[0].Rows[0][22].ToString();
+            cmbTermLoc.Text = vari.RQD.Tables[0].Rows[0][21].ToString();
+            tbNotes.Text = vari.RQD.Tables[0].Rows[0][26].ToString();
+            tbDesc.Text = vari.RQD.Tables[0].Rows[0][31].ToString();
+            if (vari.RQD.Tables[0].Rows[0][21].ToString() == "Standard")
             {
                 cmbTermLoc.SelectedIndex = 0;
             }
@@ -93,32 +113,38 @@ namespace FrontEndMain
             {
                 cmbTermLoc.SelectedIndex = 1;
             }
-            tbTermLoc.Text = vari.rQD[38].ToString();
-            tbHoles.Text = vari.rQD[39].ToString();
-            tbNotches.Text = vari.rQD[40].ToString();
+            tbHoles.Text = vari.RQD.Tables[0].Rows[0][23].ToString();
+            tbNotches.Text = vari.RQD.Tables[0].Rows[0][24].ToString();
 
-            lbAdders.Items.Add(vari.rQD[30].ToString());
-            lbAdders.Items.Add(vari.rQD[31].ToString());
-            lbAdders.Items.Add(vari.rQD[32].ToString());
-            lbAdders.Items.Add(vari.rQD[33].ToString());
-            lbAdders.Items.Add(vari.rQD[34].ToString());
-            lbAdders.Items.Add(vari.rQD[35].ToString());
+            lbAdders.Items.Add(vari.RQD.Tables[0].Rows[0][33].ToString());
+            lbAdders.Items.Add(vari.RQD.Tables[0].Rows[0][35].ToString());
+            lbAdders.Items.Add(vari.RQD.Tables[0].Rows[0][37].ToString());
+            lbAdders.Items.Add(vari.RQD.Tables[0].Rows[0][39].ToString());
+            lbAdders.Items.Add(vari.RQD.Tables[0].Rows[0][41].ToString());
+            lbAdders.Items.Add(vari.RQD.Tables[0].Rows[0][43].ToString());
 
             string watt;
             string volt = "";
             if (Convert.ToDouble(tbVolts.Text) < 100) { volt = "0"; }
-            else {
+            else
+            {
                 if (Convert.ToDouble(tbVolts.Text) < 200) { volt = "1"; }
-                else {
+                else
+                {
                     if (Convert.ToDouble(tbVolts.Text) < 300) { volt = "2"; }
-                    else {
+                    else
+                    {
                         if (Convert.ToDouble(tbVolts.Text) < 400) { volt = "3"; }
-                        else {
+                        else
+                        {
                             if (Convert.ToDouble(tbVolts.Text) < 500) { volt = "4"; }
-                            else {
+                            else
+                            {
                                 if (Convert.ToDouble(tbVolts.Text) < 600) { volt = "5"; }
-                                else {
-                                    if (Convert.ToDouble(tbVolts.Text) < 700) { volt = "6"; } }
+                                else
+                                {
+                                    if (Convert.ToDouble(tbVolts.Text) < 700) { volt = "6"; }
+                                }
                             }
                         }
                     }
@@ -129,7 +155,7 @@ namespace FrontEndMain
 
             tbQB.Text = tbPN.Text + "-" + watt + "-" + volt + "-01";
 
-            switch (vari.rQD[11])
+            switch (vari.RQD.Tables[0].Rows[0][12].ToString())
             {
                 case "1":
                     tbG1.IsEnabled = IsEnabled;
@@ -155,9 +181,85 @@ namespace FrontEndMain
                     tbG3.IsEnabled = IsEnabled;
                     tbG4.IsEnabled = IsEnabled;
                     break;
-
             }
         }
+
+        private void CustomerDetails()
+        {
+            // SET THE DATABASE CONNECTION VARS
+            string file = vari.DefaultDirectory + "Customers.accdb"; string ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source =" + file + ";";
+            // Attempt to connect to the database
+            using (var connection1 = new OleDbConnection(ConnectionString))
+            {
+                OleDbCommand OComm = new OleDbCommand();
+                OComm.Connection = connection1;
+                try
+                {
+                    connection1.Open();
+                    // Query the database to find all entries without a FINISH TIME
+                    OleDbDataAdapter DA = new OleDbDataAdapter("SELECT * FROM CustomerList WHERE CustName = '" + tbCust.Text + "';", connection1);
+                    var DataSet = new DataSet();
+                    DA.Fill(DataSet, "*");
+
+                    //Standard) EZ Heat, EZ Number, W/V/D
+                    //No EZ Heat, EZ Number, W/V/D
+                    //Customer Name, EZ Number, W/V/D
+                    //Customer Name, Customer Number, W/V/D
+                    //No EZ Heat, Customer Number, W/V/D
+
+                    //DataSet.Tables[0].Rows[0][11].ToString()
+
+                    cmbStamp.Text = DataSet.Tables[0].Rows[0][11].ToString();
+
+                    Stamp(DataSet.Tables[0].Rows[0][11].ToString());
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message); }
+                finally
+                { connection1.Close(); }
+            }
+        }
+
+        private void Stamp(string value)
+        {
+            if (value == null)
+            {
+                tbS1.Text = "EZ HEAT";
+                tbS2.Text = tbBH.Text;
+                tbS3.Text = tbWatts.Text + " " + tbVolts.Text + " DATE";
+            }
+            if (value == "(Standard) EZ Heat, EZ Number, W/V/D")
+            {
+                tbS1.Text = "EZ HEAT";
+                tbS2.Text = tbBH.Text;
+                tbS3.Text = tbWatts.Text + "W " + tbVolts.Text + "V DATE";
+            }
+            if (value == "No EZ Heat, EZ Number, W/V/D")
+            {
+                tbS1.Text = "NO EZ HEAT!";
+                tbS2.Text = tbBH.Text;
+                tbS3.Text = tbWatts.Text + "W " + tbVolts.Text + "V DATE";
+            }
+            if (value == "Customer Name, EZ Number, W/V/D")
+            {
+                tbS1.Text = tbCust.Text;
+                tbS2.Text = tbBH.Text;
+                tbS3.Text = tbWatts.Text + "W " + tbVolts.Text + "V DATE";
+            }
+            if (value == "Customer Name, Customer Number, W/V/D")
+            {
+                tbS1.Text = tbCust.Text;
+                tbS2.Text = tbCustPN.Text;
+                tbS3.Text = tbWatts.Text + "W " + tbVolts.Text + "V DATE";
+            }
+            if (value == "No EZ Heat, Customer Number, W/V/D")
+            {
+                tbS1.Text = "NO EZ HEAT!";
+                tbS2.Text = tbCustPN.Text;
+                tbS3.Text = tbWatts.Text + "W " + tbVolts.Text + "V DATE";
+            }
+        }
+        
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -199,7 +301,7 @@ namespace FrontEndMain
                 finally
                 { connection1.Close(); }
             }
-            vari.filenumber = tbQB_Copy.Text;
+            //vari.filenumber = tbQB_Copy.Text;
             this.Close();
         }
 
@@ -209,13 +311,30 @@ namespace FrontEndMain
             NG.Show();
         }
 
-        private void Window_Activated(object sender, EventArgs e)
+        private void cmbStamp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Stamp(cmbStamp.SelectedItem.ToString());
+        }
 
-            tbBH.Text = vari.filenumber;
+        private void tbBH_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Stamp(cmbStamp.SelectedItem.ToString());
+        }
 
-            vari.filegen = false;
-            vari.filenumber = null;
+        private void tbCustPN_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Stamp(cmbStamp.SelectedItem.ToString());
+        }
+
+        private void cmbConstr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbConstr.SelectedItem.ToString() == "Reverse Construction")
+            {
+                tbSeg.Text = "R";
+            } else
+            {
+                tbSeg.Text = vari.RQD.Tables[0].Rows[0][12].ToString();
+            }
         }
     }
 }

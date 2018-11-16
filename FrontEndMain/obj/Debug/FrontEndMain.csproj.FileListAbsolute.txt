@@ -95,3 +95,9 @@ C:\Users\Aaron2\source\repos\FrontEnd\FrontEndMain\obj\Debug\FrontEndMain.g.reso
 C:\Users\Aaron2\source\repos\FrontEnd\FrontEndMain\obj\Debug\FrontEndMain.Properties.Resources.resources
 C:\Users\Aaron2\source\repos\FrontEnd\FrontEndMain\obj\Debug\FrontEndMain.csproj.GenerateResource.cache
 C:\Users\Aaron2\source\repos\FrontEnd\FrontEndMain\obj\Debug\FrontEndMain.csproj.CoreCompileInputs.cache
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\PartsLists.g.cs
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\PartsLists_MicaBand.g.cs
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\RecallQuote2.g.cs
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\PartsLists.baml
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\PartsLists_MicaBand.baml
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\RecallQuote2.baml

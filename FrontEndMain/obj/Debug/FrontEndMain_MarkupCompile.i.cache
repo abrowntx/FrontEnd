@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Aaron2\source\repos\FrontEnd\FrontEndMain\obj\Debug\
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\obj\Debug\
 FrontEndMain
 none
 false
 DEBUG;TRACE
-C:\Users\Aaron2\source\repos\FrontEnd\FrontEndMain\App.xaml
+C:\Users\Aaron\Documents\Visual Studio 2017\Projects\FrontEndMain\FrontEndMain\App.xaml
 191044627155
 
-301672796778
-17-581289783
+30-1149296640
+19-1862531502
 Configurator.xaml;CreateQuote.xaml;CreateQuote_Cartridge.xaml;CreateQuote_Ceramic.xaml;CreateQuote_MicaStrip.xaml;CreateQuote_Misc.xaml;CustomerEdit.xaml;CustomerManager.xaml;MainWindow.xaml;ModifyAdders.xaml;NumberGen.xaml;PartGen_Cartridge.xaml;PartGen_MicaBand.xaml;PartsLists.xaml;PartsLists_MicaBand.xaml;QuoteViewer.xaml;Q_Adders.xaml;RecallQuote.xaml;RecallQuote2.xaml;
 
 True

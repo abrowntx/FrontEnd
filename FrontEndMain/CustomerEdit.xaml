@@ -8,38 +8,37 @@
         Title="Customer Editor" Height="500" Width="650"
         WindowStartupLocation="Manual" 
         Left="315" Top="110"
-        ResizeMode="NoResize" Background="#FFEAE7E2">
+        ResizeMode="NoResize" Background="#FF9E9B99">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="8" Margin="10,64,0,0" VerticalAlignment="Top" Width="624" Fill="#FFC3B7AF" StrokeThickness="0">
-            <Rectangle.Effect>
-                <DropShadowEffect BlurRadius="0" Direction="270" ShadowDepth="0" Color="#7F000000"/>
-            </Rectangle.Effect>
-        </Rectangle>
         <TextBox x:Name="tbName" HorizontalAlignment="Left" Height="23" Margin="75,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14"/>
         <ComboBox x:Name="cmbType" HorizontalAlignment="Left" Margin="298,99,0,0" VerticalAlignment="Top" Width="150" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="cmbType_SelectionChanged">
         </ComboBox>
         <TextBox x:Name="tbMulti" HorizontalAlignment="Left" Height="23" Margin="478,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="tbPhone" HorizontalAlignment="Left" Height="23" Margin="108,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="tbFax" HorizontalAlignment="Left" Height="23" Margin="333,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="cmbAdd1" HorizontalAlignment="Left" Height="23" Margin="128,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="cmbAdd2" HorizontalAlignment="Left" Height="23" Margin="128,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="cmbAdd3" HorizontalAlignment="Left" Height="23" Margin="128,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="cmbAdd4" HorizontalAlignment="Left" Height="23" Margin="128,337,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
-        <TextBox x:Name="cmbAdd5" HorizontalAlignment="Left" Height="23" Margin="128,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
-        <Button x:Name="btnNewCustomer" Content="Save Entry" HorizontalAlignment="Left" Margin="452,431,0,0" VerticalAlignment="Top" Width="182" Height="33" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnNewCustomer_Click"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="107,431,0,0" VerticalAlignment="Top" Width="85" Height="33" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929"/>
-        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="12,431,0,0" VerticalAlignment="Top" Width="85" Height="33" FontSize="18" FontWeight="Bold" Background="#FFCFCCC7" BorderBrush="#FFCFCCC7" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click"/>
+        <TextBox x:Name="tbPhone" HorizontalAlignment="Left" Height="23" Margin="410,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14"/>
+        <TextBox x:Name="tbFax" HorizontalAlignment="Left" Height="23" Margin="410,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14"/>
+        <TextBox x:Name="cmbAdd1" HorizontalAlignment="Left" Height="23" Margin="32,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
+        <TextBox x:Name="cmbAdd2" HorizontalAlignment="Left" Height="23" Margin="32,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
+        <TextBox x:Name="cmbAdd3" HorizontalAlignment="Left" Height="23" Margin="32,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
+        <TextBox x:Name="cmbAdd4" HorizontalAlignment="Left" Height="23" Margin="32,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
+        <TextBox x:Name="cmbAdd5" HorizontalAlignment="Left" Height="23" Margin="32,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" BorderBrush="White" FontSize="14"/>
+        <Button x:Name="btnNewCustomer" Content="Save Entry" HorizontalAlignment="Left" Margin="452,431,0,0" VerticalAlignment="Top" Width="182" Height="33" FontSize="18" FontWeight="Bold" Background="#FF689564" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnNewCustomer_Click" Foreground="#FFE9ECE7"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="102,431,0,0" VerticalAlignment="Top" Width="90" Height="33" FontSize="18" FontWeight="Bold" Background="#FF904E55" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Foreground="#FFE9ECE7"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="12,431,0,0" VerticalAlignment="Top" Width="93" Height="33" FontSize="18" FontWeight="Bold" Background="#FF898582" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click" Foreground="#FFE9ECE7"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="Editor" VerticalAlignment="Top" FontSize="30" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="Editor" VerticalAlignment="Top" FontSize="30" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Foreground="#FFE9ECE7"/>
         <TextBlock HorizontalAlignment="Left" Margin="75,76,0,0" TextWrapping="Wrap" Text="Customer Name:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Customer" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Customer" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0" Foreground="#FFE9ECE7"/>
         <TextBlock HorizontalAlignment="Left" Margin="478,76,-22,0" TextWrapping="Wrap" Text="Multiplier:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
         <TextBlock HorizontalAlignment="Left" Margin="300,76,0,0" TextWrapping="Wrap" Text="Customer Type:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
-        <TextBlock HorizontalAlignment="Left" Margin="108,179,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
-        <TextBlock HorizontalAlignment="Left" Margin="333,179,0,0" TextWrapping="Wrap" Text="Fax:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
-        <TextBlock HorizontalAlignment="Left" Margin="128,230,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
-        <ComboBox x:Name="cmbStamp" HorizontalAlignment="Left" Margin="107,151,0,0" VerticalAlignment="Top" Width="419" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="cmbType_SelectionChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="228,129,0,0" TextWrapping="Wrap" Text="Stamp Information:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBlock HorizontalAlignment="Left" Margin="410,186,0,0" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBlock HorizontalAlignment="Left" Margin="410,242,0,0" TextWrapping="Wrap" Text="Fax:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,186,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <ComboBox ToolTip="Select a stamping style. This will be the default for the customer, but can be overridden during part creation." x:Name="cmbStamp" HorizontalAlignment="Left" Margin="138,151,0,0" VerticalAlignment="Top" Width="177" Height="23" BorderThickness="0" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="138,129,0,0" TextWrapping="Wrap" Text="Stamp Information:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBox x:Name="tbemail" HorizontalAlignment="Left" Height="23" Margin="410,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="410,298,0,0" TextWrapping="Wrap" Text="Main Email:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
+        <TextBox ToolTip="Enter a specific fourth line stamp here. This will appear on the engineering spec sheet." x:Name="tbL4" HorizontalAlignment="Left" Height="23" Margin="326,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" BorderBrush="White" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="326,129,0,0" TextWrapping="Wrap" Text="Permanent Line 4:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
 
     </Grid>
 </Window>

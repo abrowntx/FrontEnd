@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndMain"
         mc:Ignorable="d"
-        Title="Recall an Existing Quote" Height="850" Width="1200" Background="#FFFFF5B6"
+        Title="Recall an Existing Quote" Height="850" Width="1200" Background="#FFE5E6E4"
         WindowStartupLocation="Manual" 
         Left="120" Top="50">
     <Grid>
@@ -17,46 +17,67 @@
             <ColumnDefinition Width="250px"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnMicaBand" Content="Mica Band" Height="25px" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118" Click="btnMicaBand_Click"></Button>
-        <Button x:Name="btnMicaStrip" Content="Mica Strip" Height="25px" Margin="133,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117" Click="btnMicaStrip_Click"/>
-        <Button x:Name="btnMisc" Content="Miscellaneous" Height="25px" Margin="133,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117" Click="btnMisc_Click"/>
-        <Button x:Name="btnCart" Content="Cartridge" Height="25px" Margin="10,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118" Click="btnCart_Click"/>
-        <Button x:Name="btnCeramicStrip" Content="Ceramic Strip" Height="25px" Margin="133,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117" Click="btnCeramicStrip_Click"/>
-        <Button x:Name="btnCeramic" Content="Ceramic" Height="25px" Margin="10,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="118" Click="btnCeramic_Click"/>
-        <TextBlock Text="Search Customers:" Margin="10,102,0,0" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="104"/>
-        <TextBox x:Name="tbCustSearch" Height="25px" Margin="10,121,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="185"/>
-        <Button x:Name="btnClearPNSearch_Copy" Content="clear" Margin="200,121,0,0" Height="25px" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" RenderTransformOrigin="-23.6,4.8"/>
-        <ListBox x:Name="lbCust" Grid.Column="0" Margin="10,0,0,-652" Height="650" HorizontalAlignment="Left" Width="240" Grid.Row="1">
+        <Button x:Name="btnMicaBand" Content="Mica Band" Height="33" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="126" Click="btnMicaBand_Click" Foreground="#FFFBFBF2" BorderBrush="{x:Null}" Background="#FF904E55" FontSize="14" FontWeight="Bold"></Button>
+        <Button x:Name="btnMicaStrip" Content="Mica Strip" Height="33" Margin="133,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Click="btnMicaStrip_Click" Foreground="#FFFBFBF2" BorderBrush="{x:Null}" Background="#FF904E55" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnMisc" Content="Miscellaneous" Height="33" Margin="133,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Click="btnMisc_Click" Foreground="#FFFBFBF2" BorderBrush="{x:Null}" Background="#FF904E55" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnCart" Content="Cartridge" Height="33" Margin="10,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="126" Click="btnCart_Click" Foreground="#FFFBFBF2" BorderBrush="{x:Null}" Background="#FF904E55" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="btnCeramicStrip" Content="Ceramic Strip" Height="33" Margin="133,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Click="btnCeramicStrip_Click" Foreground="#FFFBFBF2" BorderBrush="{x:Null}" Background="#FF904E55" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnCeramic" Content="Ceramic" Height="33" Margin="10,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="126" Click="btnCeramic_Click" Foreground="#FFFBFBF2" BorderBrush="{x:Null}" Background="#FF904E55" FontSize="14" FontWeight="Bold"/>
+        <TextBlock Text="Search Customers:" Margin="10,102,0,0" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="104" Foreground="#FF615757"/>
+        <TextBox x:Name="tbCustSearch" Height="25px" Margin="12,121,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="183" Foreground="#FF615757" BorderBrush="White" Background="White"/>
+        <Button x:Name="btnClearPNSearch_Copy" Content="clear" Margin="195,118,0,0" HorizontalAlignment="Left" Width="55" RenderTransformOrigin="-23.6,4.8" Foreground="White" BorderBrush="{x:Null}" Background="#FF567568" FontWeight="Bold" Click="btnClearPNSearch_Copy_Click" Height="31" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbCust" Grid.Column="0" Margin="10,154,0,-582" Height="650" VerticalAlignment="Top" HorizontalAlignment="Left" Width="240" BorderBrush="{x:Null}" Background="White" Foreground="#FF615757" MouseLeftButtonUp="lbCust_MouseLBU" Grid.RowSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding CustName}"/>
+                        <TextBlock Text="{Binding CustName}"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="cmMBQ" Header="Mica Band Quotes" MouseLeftButtonDown="cmMBQ_MouseLeftButtonDown" />
+                    <MenuItem x:Name="cmMSQ" Header="Mica Strip Quotes" />
+                    <Separator />
+                    <MenuItem x:Name="cmCBQ" Header="Ceramic Band Quotes" />
+                    <MenuItem x:Name="cmCSQ" Header="Ceramic Strip Quotes" />
+                    <Separator />
+                    <MenuItem x:Name="cmCQ" Header="Cartridge Quotes" />
+                    <Separator />
+                    <MenuItem x:Name="cmMQ" Header="Miscellaneous Quotes" />
+                    <Separator />
+                    <MenuItem x:Name="cmECD" Header="Edit Customer Details" />
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
-
-        <TextBlock Text="Search Part Number:" Grid.Column="1" Margin="0,11,177,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-        <TextBlock x:Name="lPrefix" Text="BH" Grid.Column="1" Margin="0,11,146,0" TextAlignment="Right" FontWeight="Bold" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" RenderTransformOrigin="1.203,0.483"/>
-        <TextBox x:Name="tbPNSearch" Grid.Column="1" Margin="0,10,55,0" FontSize="14" Height="25px" VerticalAlignment="Top" HorizontalAlignment="Right" Width="91"/>
-        <Button x:Name="btnClearPNSearch" Grid.Column="1" Content="clear" Margin="0,10,10,0" Height="25px" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40"/>
-        <ListBox x:Name="lbList" Grid.Column="1" Width="auto" Height="765" Margin="10,40,10,-652" Grid.RowSpan="2">
+        <ListBox x:Name="lbList" Grid.Column="1" Width="auto" Height="724" Margin="10,80,10,-632" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="White" Foreground="#FF615757" MouseLeftButtonUp="lbList_MouseLeftButtonUp" VerticalAlignment="Top">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding id}" FontSize="10"/>
-                        <TextBlock Text="{Binding cust}" FontSize="12" Margin="35,0,0,0"/>
-                        <TextBlock Text="{Binding file}" FontSize="12" Margin="250,0,0,0"/>
+                        <TextBlock Text="{Binding ID}" FontSize="10"/>
+                        <TextBlock Text="{Binding Cust}" FontSize="12" Margin="35,0,0,0"/>
+                        <TextBlock Text="{Binding file}" FontSize="12" Margin="230,0,0,0"/>
                         <TextBlock Text="{Binding pn}" FontSize="12" Margin="350,0,0,0"/>
                         <TextBlock Text="{Binding date}" FontSize="12" Margin="400,0,0,0"/>
                         <TextBlock Text="{Binding notes}" FontSize="12" Margin="500,0,0,0"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="cmCreatePart" Header="Create New Part" Click="cmCreatePart_MouseDown"/>
+                    <MenuItem x:Name="cmEditPart" Header="Edit Quote Details" Click="cmEditQuodeDetails_MouseDown"/>
+                    <MenuItem x:Name="cmCreateSimilarPart" Header="Create Similar Part" Click="cmCreatePart_MouseDown"/>
+                    <Separator />
+                    <MenuItem x:Name="cmDeleteQuote" Header="Delete Quote Entry" Click="cmCreatePart_MouseDown"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
-        <TextBlock Text="↑↓  Customer " Grid.Column="1" Margin="0,19,806,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold"/>
-        <TextBlock Text="↑↓  File " Grid.Column="1" Margin="0,19,627,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold"/>
-        <TextBlock Text="↑↓  Part Number" Grid.Column="1" Margin="0,19,478,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold"/>
+        <TextBlock Text="↑↓  Customer " Grid.Column="1" Margin="0,62,823,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold" Foreground="#FF615757"/>
+        <TextBlock Text="↑↓  File " Grid.Column="1" Margin="0,62,662,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold" Foreground="#FF615757"/>
+        <TextBlock Text="↑↓  Part Number" Grid.Column="1" Margin="0,62,493,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold" Foreground="#FF615757"/>
+        <TextBlock Text="Description/Notes" Grid.Column="1" Margin="0,62,266,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontWeight="Bold" Foreground="#FF615757" Width="165"/>
+        <TextBlock x:Name="lPrefix" Margin="15,14,0,0" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="917" Foreground="#FF615757" Grid.Column="1" FontSize="24" TextAlignment="Right"/>
 
     </Grid>
 </Window>

@@ -8,8 +8,13 @@
         Title="Create Quote - Mica Band" Height="600" Width="950"
         WindowStartupLocation="Manual" 
         Left="165" Top="55"
-        ResizeMode="CanMinimize" Background="#FFEAE7E2" Activated="Window_Activated" Closing="Window_Closing">
+        ResizeMode="CanMinimize" Background="#FFE5E6E4" Activated="Window_Activated" Closing="Window_Closing">
     <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="944" Fill="#FFD2D7E0" StrokeThickness="0">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="0" Direction="270" ShadowDepth="0" Color="#7F000000"/>
+            </Rectangle.Effect>
+        </Rectangle>
         <TextBlock HorizontalAlignment="Left" Margin="10,96,0,0" TextWrapping="Wrap" Text="Customer:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
         <TextBlock HorizontalAlignment="Left" Margin="-25,189,0,0" TextWrapping="Wrap" Text="Quantities" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="91" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
@@ -39,42 +44,36 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mica Band" VerticalAlignment="Top" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="350" Margin="584,12,0,0" TextAlignment="Right"/>
         <TextBlock HorizontalAlignment="Left" Margin="681,247,0,0" TextWrapping="Wrap" Text="Special Notes:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="188"/>
 
-        <ComboBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="myComboBox" HorizontalAlignment="Left" Margin="8,119,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="myComboBox_SelectionChanged">
-        </ComboBox>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty1" HorizontalAlignment="Left" Height="23" Margin="41,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty1_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty2" HorizontalAlignment="Left" Height="23" Margin="41,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty2_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty3" HorizontalAlignment="Left" Height="23" Margin="41,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty3_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty4" HorizontalAlignment="Left" Height="23" Margin="41,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty4_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbSeg" HorizontalAlignment="Left" Height="23" Margin="232,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbSeg_GotFocus"/>
-        <ComboBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbLockup" HorizontalAlignment="Left" Margin="232,169,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbDia" HorizontalAlignment="Left" Height="23" Margin="232,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbDia_SelectionChanged" GotFocus="tbDia_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbWidth" HorizontalAlignment="Left" Height="23" Margin="330,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbWidth_SelectionChanged" GotFocus="tbWidth_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbWatts" HorizontalAlignment="Left" Height="23" Margin="232,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbWatts_SelectionChanged" GotFocus="tbWatts_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbVolts" HorizontalAlignment="Left" Height="23" Margin="330,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbVolts_SelectionChanged" GotFocus="tbVolts_GotFocus"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="myComboBox" HorizontalAlignment="Left" Margin="8,119,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="myComboBox_SelectionChanged"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty1" HorizontalAlignment="Left" Height="23" Margin="41,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty1_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty2" HorizontalAlignment="Left" Height="23" Margin="41,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty2_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty3" HorizontalAlignment="Left" Height="23" Margin="41,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty3_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQty4" HorizontalAlignment="Left" Height="23" Margin="41,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" BorderBrush="White" FontSize="14" GotFocus="tbQty4_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbSeg" HorizontalAlignment="Left" Height="23" Margin="232,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbSeg_GotFocus" TextChanged="tbSeg_TextChanged"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbLockup" HorizontalAlignment="Left" Margin="232,169,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbDia" HorizontalAlignment="Left" Height="23" Margin="232,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbDia_SelectionChanged" GotFocus="tbDia_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbWidth" HorizontalAlignment="Left" Height="23" Margin="330,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbWidth_SelectionChanged" GotFocus="tbWidth_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbWatts" HorizontalAlignment="Left" Height="23" Margin="232,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbWatts_SelectionChanged" GotFocus="tbWatts_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbVolts" HorizontalAlignment="Left" Height="23" Margin="330,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" SelectionChanged="tbVolts_SelectionChanged" GotFocus="tbVolts_GotFocus"/>
 
-        <ComboBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="cmbTermStyle" HorizontalAlignment="Left" Margin="454,119,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbLeads" HorizontalAlignment="Left" Height="23" Margin="454,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbLeads_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbLeadCov" HorizontalAlignment="Left" Height="23" Margin="454,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbLeadCov_GotFocus"/>
-        <ComboBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="cmbTermLoc" HorizontalAlignment="Left" Margin="454,269,0,0" VerticalAlignment="Top" Width="93" Height="23" BorderThickness="0" FontSize="14"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbTermMeasure" HorizontalAlignment="Left" Height="23" Margin="552,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" GotFocus="tbTermMeasure_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbHoles" HorizontalAlignment="Left" Height="23" Margin="681,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" GotFocus="tbHoles_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbCutouts" HorizontalAlignment="Left" Height="23" Margin="779,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" GotFocus="tbCutouts_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbMulti" HorizontalAlignment="Left" Height="23" Margin="681,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbMulti_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbManualAdder" ToolTip="Enter a manual additional dollar amount to be applied per heater after quantity calculations are done" HorizontalAlignment="Left" Height="23" Margin="681,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbManualAdder_GotFocus"/>
-        <TextBox UIElement.PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbSpecials" HorizontalAlignment="Left" Height="129" Margin="681,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" BorderBrush="White" FontSize="14" GotFocus="tbSpecials_GotFocus"/>
-        <Button x:Name="btnPrecalculate" Content="Precalculate" HorizontalAlignment="Left" Margin="653,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFAFD4E2" BorderBrush="#FFAFD4E2" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnPrecalculate_Click"/>
-        <Button x:Name="btnSaveQuote" Content="Save Quote" HorizontalAlignment="Left" Margin="796,523,0,7" Width="138" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click"/>
-        <Button x:Name="btnClearForm" Content="Clear Form" HorizontalAlignment="Left" Margin="155,524,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClearForm_Click"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="cmbTermStyle" HorizontalAlignment="Left" Margin="454,119,0,0" VerticalAlignment="Top" Width="193" Height="23" BorderThickness="0" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbLeads" HorizontalAlignment="Left" Height="23" Margin="454,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbLeads_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbLeadCov" HorizontalAlignment="Left" Height="23" Margin="454,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbLeadCov_GotFocus"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="cmbTermLoc" HorizontalAlignment="Left" Margin="454,269,0,0" VerticalAlignment="Top" Width="93" Height="23" BorderThickness="0" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbTermMeasure" HorizontalAlignment="Left" Height="23" Margin="552,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" GotFocus="tbTermMeasure_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbHoles" HorizontalAlignment="Left" Height="23" Margin="681,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" GotFocus="tbHoles_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbCutouts" HorizontalAlignment="Left" Height="23" Margin="779,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" BorderBrush="White" FontSize="14" GotFocus="tbCutouts_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbMulti" HorizontalAlignment="Left" Height="23" Margin="681,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbMulti_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbManualAdder" ToolTip="Enter a manual additional dollar amount to be applied per heater after quantity calculations are done" HorizontalAlignment="Left" Height="23" Margin="681,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" BorderBrush="White" FontSize="14" GotFocus="tbManualAdder_GotFocus"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbSpecials" HorizontalAlignment="Left" Height="129" Margin="681,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" BorderBrush="White" FontSize="14" GotFocus="tbSpecials_GotFocus"/>
+        <Button x:Name="btnPrecalculate" Content="Precalculate" HorizontalAlignment="Left" Margin="650,523,0,0" VerticalAlignment="Top" Width="143" Height="44" FontSize="18" FontWeight="Bold" Background="#FF6A8195" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnPrecalculate_Click" Foreground="#FFE5E6E4"/>
+        <Button x:Name="btnSaveQuote" Content="Save Quote" HorizontalAlignment="Left" Margin="793,523,0,7" Width="144" FontSize="18" FontWeight="Bold" Background="#FF689564" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click" Foreground="#FFE5E6E4"/>
+        <Button x:Name="btnClearForm" Content="Clear Form" HorizontalAlignment="Left" Margin="150,520,0,0" VerticalAlignment="Top" Width="143" Height="47" FontSize="18" FontWeight="Bold" Background="#FF904E55" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClearForm_Click" Foreground="#FFE5E6E4"/>
         <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="12,523,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFCFCCC7" BorderBrush="#FFCFCCC7" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click"/>
-        <TextBlock x:Name="lq1" HorizontalAlignment="Left" Margin="126,151,0,0" TextWrapping="Wrap" Text="{Binding Path = lq1, Mode = TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
-        <TextBlock x:Name="lq2" HorizontalAlignment="Left" Margin="126,179,0,0" TextWrapping="Wrap" Text="{Binding Path = lq2, Mode = TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
-        <TextBlock x:Name="lq3" HorizontalAlignment="Left" Margin="126,207,0,0" TextWrapping="Wrap" Text="{Binding Path = lq3, Mode = TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
-        <TextBlock x:Name="lq4" HorizontalAlignment="Left" Margin="126,235,0,0" TextWrapping="Wrap" Text="{Binding Path = lq4, Mode = TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
-        <Rectangle HorizontalAlignment="Left" Height="8" Margin="10,64,0,0" VerticalAlignment="Top" Width="924" Fill="#FFC3B7AF" StrokeThickness="0">
-            <Rectangle.Effect>
-                <DropShadowEffect BlurRadius="0" Direction="270" ShadowDepth="0" Color="#7F000000"/>
-            </Rectangle.Effect>
-        </Rectangle>
+        <TextBlock x:Name="lq1" HorizontalAlignment="Left" Margin="126,151,0,0" TextWrapping="Wrap" Text="{Binding lq1, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
+        <TextBlock x:Name="lq2" HorizontalAlignment="Left" Margin="126,179,0,0" TextWrapping="Wrap" Text="{Binding lq2, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
+        <TextBlock x:Name="lq3" HorizontalAlignment="Left" Margin="126,207,0,0" TextWrapping="Wrap" Text="{Binding lq3, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
+        <TextBlock x:Name="lq4" HorizontalAlignment="Left" Margin="126,235,0,0" TextWrapping="Wrap" Text="{Binding lq4, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
         <TextBlock x:Name="lMulti" HorizontalAlignment="Left" Margin="126,101,0,0" TextWrapping="Wrap" Text="{Binding lMulti, Mode=TwoWay}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="75" FontStyle="Italic" TextAlignment="Right"/>
         <RadioButton x:Name="rdoSMT" Content="SMT Pricing" HorizontalAlignment="Left" Margin="41,269,0,0" VerticalAlignment="Top" FontSize="14" IsChecked="True" Click="rdoSMT_Clicked"/>
         <RadioButton x:Name="rdo5DAY" Content="5-DAY Pricing" HorizontalAlignment="Left" Margin="41,286,0,0" VerticalAlignment="Top" FontSize="14" Click="rdo5DAY_Click"/>
@@ -87,7 +86,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding AdderName}" FontSize="14" Margin="0,0,0,0"></TextBlock>
+                        <TextBlock Text="{Binding AdderName}" FontSize="14" Margin="0,0,0,0"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -97,10 +96,14 @@
         <TextBlock HorizontalAlignment="Left" Margin="41,341,0,0" TextWrapping="Wrap" Text="Heater Info:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="148"/>
         <TextBlock HorizontalAlignment="Left" Margin="-8,368,0,0" TextWrapping="Wrap" Text="Watt Density:" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="148" TextAlignment="Right" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="-8,390,0,0" TextWrapping="Wrap" Text="Amperage:" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="148" TextAlignment="Right" FontWeight="Bold"/>
-        <TextBlock x:Name="lWsi" HorizontalAlignment="Left" Margin="145,368,0,0" Text="{Binding lWsi, Mode=TwoWay, StringFormat={}N2}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="83"/>
-        <TextBlock x:Name="lAmps" HorizontalAlignment="Left" Margin="145,390,0,0" Text="{Binding lAmps, Mode=TwoWay, StringFormat={}N2}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="83"/>
-        <Button x:Name="btnDelAdd" ToolTip="Clear All Adders!" Content="x" HorizontalAlignment="Left" Margin="601,302,0,0" VerticalAlignment="Top" Width="23" Height="20" FontSize="12" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelAdd_Click"/>
-        <Button x:Name="btnClearForm_Copy" Content="Clear Form" HorizontalAlignment="Left" Margin="398,477,0,0" VerticalAlignment="Top" Width="138" Height="41" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClearForm_Copy_Click"/>
+        <TextBlock x:Name="lWsi" HorizontalAlignment="Left" Margin="145,368,0,0" Text="{Binding lWsi, Mode=TwoWay, StringFormat=N2}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="83"/>
+        <TextBlock x:Name="lAmps" HorizontalAlignment="Left" Margin="145,390,0,0" Text="{Binding lAmps, Mode=TwoWay, StringFormat=N2}" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" Width="83"/>
+        <Button x:Name="btnDelAdd" ToolTip="Clear All Adders!" Content="x" HorizontalAlignment="Left" Margin="598,299,0,0" VerticalAlignment="Top" Width="29" Height="26" FontSize="12" Background="#FF904E55" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelAdd_Click" Foreground="#FFE5E6E4"/>
+        <TextBlock HorizontalAlignment="Left" Margin="232,300,0,0" TextWrapping="Wrap" Text="Gaps:" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Width="94"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbg1" HorizontalAlignment="Left" Height="23" Margin="232,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" BorderBrush="White" FontSize="14" SelectionChanged="tbWatts_SelectionChanged" GotFocus="tbWatts_GotFocus"/>
+        <TextBox Visibility="Hidden" PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbg2" HorizontalAlignment="Left" Height="23" Margin="281,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" BorderBrush="White" FontSize="14" SelectionChanged="tbWatts_SelectionChanged" GotFocus="tbWatts_GotFocus"/>
+        <TextBox Visibility="Hidden" PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbg3" HorizontalAlignment="Left" Height="23" Margin="331,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" BorderBrush="White" FontSize="14" SelectionChanged="tbWatts_SelectionChanged" GotFocus="tbWatts_GotFocus"/>
+        <TextBox Visibility="Hidden" PreviewKeyDown="Grid_PreviewKeyDown" x:Name="tbg4" HorizontalAlignment="Left" Height="23" Margin="380,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" BorderBrush="White" FontSize="14" SelectionChanged="tbWatts_SelectionChanged" GotFocus="tbWatts_GotFocus"/>
 
     </Grid>
 </Window>

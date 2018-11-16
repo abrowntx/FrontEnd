@@ -17,13 +17,17 @@ namespace FrontEndMain
         public RecallQuote2()
         {
             InitializeComponent();
-            QueryCustList();
+            QueryCustList("SELECT ID,CustName FROM CustomerList;");
+            btnClearPNSearch_Copy.IsEnabled = false;
+            tbCustSearch.IsEnabled = false;
+            lbCust.IsEnabled = false;
         }
 
-        //PUBLIC VARIABLES
+//PUBLIC VARIABLES
         public int Code;
         
-        private void QueryCustList()
+//FILL CUSTOMERS PANEL
+        private void QueryCustList(string Query)
         {
             // SET THE DATABASE CONNECTION VARS
             string file = vari.DefaultDirectory + "Customers.accdb";
@@ -38,7 +42,7 @@ namespace FrontEndMain
                 {
                     connection1.Open();
                     // Query the database to find all entries without a FINISH TIME
-                    OleDbDataAdapter DA = new OleDbDataAdapter("SELECT ID,CustName FROM CustomerList;", connection1);
+                    OleDbDataAdapter DA = new OleDbDataAdapter(Query, connection1);
                     var DataSet = new DataSet();
                     DA.Fill(DataSet, "*");
                     // Set the dataset from OleDBAdapter to the item source of the data grid object
@@ -58,12 +62,20 @@ namespace FrontEndMain
             }
         }
 
-        private void FillDetails(string Dep, int C, string prefix)
+//FILL DETAILS PANEL
+        private void FillDetails(string Dep, int C, string prefix, string Query)
         {
+            btnClearPNSearch_Copy.IsEnabled = true;
+            tbCustSearch.IsEnabled = true;
+            lbCust.IsEnabled = true;
+
             Code = C;
+            vari.rIndex = C;
+            vari.rDep = Dep;
+            vari.rPre = prefix;
             lPrefix.Text = prefix;
             // SET THE DATABASE CONNECTION VARS
-            string file = vari.DefaultDirectory + "Lists.accdb";
+            string file = vari.DefaultDirectory + "Quotes.accdb";
             string ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source =" + file + ";";
 
             // Attempt to connect to the database
@@ -75,17 +87,26 @@ namespace FrontEndMain
                 {
                     connection1.Open();
                     // Query the database to find all entries without a FINISH TIME
-                    OleDbDataAdapter DA = new OleDbDataAdapter("SELECT * FROM " + Dep + ";", connection1);
+                    OleDbDataAdapter DA = new OleDbDataAdapter("SELECT * FROM " + Dep + Query + ";", connection1);
                     var DataSet = new DataSet();
                     DA.Fill(DataSet, "*");
-                    // Set the dataset from OleDBAdapter to the item source of the data grid object
-                    lbList.DataContext = DataSet.Tables[0];
-                    lbList.ItemsSource = DataSet.Tables[0].DefaultView;
+                    if (vari.Recall == true)
+                    {
+                        vari.RQD = null;
+                        vari.RQD = DataSet;
+                        vari.Recall = false;
+                    }
+                    else
+                    {
+                        // Set the dataset from OleDBAdapter to the item source of the data grid object
+                        lbList.DataContext = DataSet.Tables[0];
+                        lbList.ItemsSource = DataSet.Tables[0].DefaultView;
 
-                    ICollectionView dataView = CollectionViewSource.GetDefaultView(lbList.ItemsSource);
-                    dataView.SortDescriptions.Clear();
-                    dataView.SortDescriptions.Add(new SortDescription("file", ListSortDirection.Descending));
-                    dataView.Refresh();
+                        ICollectionView dataView = CollectionViewSource.GetDefaultView(lbList.ItemsSource);
+                        dataView.SortDescriptions.Clear();
+                        dataView.SortDescriptions.Add(new SortDescription("id", ListSortDirection.Descending));
+                        dataView.Refresh();
+                    }
 
                 }
                 catch (Exception ex)
@@ -95,34 +116,108 @@ namespace FrontEndMain
             }
         }
 
+//DEPARTMENT SELECT BUTTONS
         private void btnMicaBand_Click(object sender, RoutedEventArgs e)
-        {
-            FillDetails("BHList", 1, "BH");
-        }
+        { FillDetails("MicaQuotes", 1, "Mica Band Heater Quotes", ""); }
 
         private void btnMicaStrip_Click(object sender, RoutedEventArgs e)
-        {
-            FillDetails("SHList", 2, "SH");
-        }
+        { FillDetails("FlatQuotes", 2, "Mica Strip Heater Quotes", ""); }
 
         private void btnCeramic_Click(object sender, RoutedEventArgs e)
-        {
-            FillDetails("CBList", 3, "CB");
-        }
+        { FillDetails("CerQuotes", 3, "Ceramic Heater Quotes", ""); }
 
         private void btnCeramicStrip_Click(object sender, RoutedEventArgs e)
-        {
-            FillDetails("CSList", 4, "CS");
-        }
+        { FillDetails("CSQuotes", 4, "Ceramic Strip Heater Quotes", ""); }
 
         private void btnCart_Click(object sender, RoutedEventArgs e)
-        {
-            FillDetails("CList", 5, "C");
-        }
+        { FillDetails("CartQuotes", 5, "Cartridge Heater Quotes", ""); }
 
         private void btnMisc_Click(object sender, RoutedEventArgs e)
+        { FillDetails("MiscQuotes", 6, "Miscellaneous Quotes", ""); }
+
+        private void RQD()
         {
-            FillDetails("MList", 6, "M");
+            //Break functiion if listbox selection is null
+            if (lbList.SelectedItem == null) { return; }
+
+            vari.Recall = true;
+            vari.drvSelect = (DataRowView)lbList.SelectedItem;
+            //int i = 0;
+            //string s = "";
+            //for (i = 0; i < vari.drvSelect.Row.Table.Columns.Count; i++)
+            //{
+            //    s = s + "     [" + i + "] - " + vari.drvSelect[i].ToString();
+            //}
+            FillDetails(vari.rDep, vari.rIndex, vari.rPre, " WHERE id = " + vari.drvSelect[0].ToString() + "");
+
+
+            vari.Recall = true;
+            CreateQuote CMBQ = new CreateQuote();
+            CMBQ.Show();
+        }
+
+        private void CreateNewPart()
+        {
+            //Break functiion if listbox selection is null
+            if (lbList.SelectedItem == null) { return; }
+
+            vari.Recall = true;
+            vari.drvSelect = (DataRowView)lbList.SelectedItem;
+            FillDetails(vari.rDep, vari.rIndex, vari.rPre, " WHERE id = " + vari.drvSelect[0].ToString() + "");
+            PartGen_MicaBand CNPMB = new PartGen_MicaBand();
+            CNPMB.Show();
+        }
+
+
+//CUSTOMER LIST BOX ACTIONS!
+        private void lbCust_MouseLBU(object sender, MouseButtonEventArgs e)
+        {
+            //Break functiion if listbox selection is null
+            if (lbCust.SelectedItem == null) { return; }
+
+            vari.drvSelect = (DataRowView)lbCust.SelectedItem;
+            string s = " WHERE Cust = '" + vari.drvSelect[1].ToString() + "'";
+
+            FillDetails(vari.rDep, vari.rIndex, vari.rPre, s);
+        }
+
+//DETAILS LIST BOX ACTIONS!
+        private void lbList_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+//SEARCH CUSTOMERS FUNCTION
+        private void btnClearPNSearch_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            QueryCustList("SELECT ID,CustName FROM CustomerList WHERE CustName LIKE '%" + tbCustSearch.Text + "%';");
+        }
+
+
+//CUSTOMER LISTBOX CONTEXT MENU ITEMS
+        private void cmMBQ_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+
+//DETAILS LISTBOX CONTEXT MENU ITEMS
+        //CREATE NEW PART
+        private void cmCreatePart_MouseDown(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                CreateNewPart();
+            }
+        }
+
+        //EDIT QUOTE DETAILS
+        private void cmEditQuodeDetails_MouseDown(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                RQD();
+            }
         }
     }
 }

@@ -80,7 +80,7 @@ namespace FrontEndMain
                     int NextID = sortedDT.Rows.Count;
 
                     // Query the database to find all entries without a FINISH TIME
-                    OleDbDataAdapter DB = new OleDbDataAdapter("SELECT ID,file,seg,locku,dia,wid,termstyle,base FROM BHList WHERE seg='" + vari.rQD[11] + "' AND locku='" + vari.rQD[12] + "' AND dia = " + vari.rQD[13] + " AND wid = " + vari.rQD[14] + " AND termstyle = '" + vari.rQD[17] + "';", connection1);
+                    OleDbDataAdapter DB = new OleDbDataAdapter("SELECT ID,file,seg,locku,dia,wid,termstyle,base FROM BHList WHERE seg='" + vari.RQD.Tables[0].Rows[0][12].ToString() + "' AND locku='" + vari.RQD.Tables[0].Rows[0][13].ToString() + "' AND dia = " + vari.RQD.Tables[0].Rows[0][14].ToString() + " AND wid = " + vari.RQD.Tables[0].Rows[0][15].ToString() + " AND termstyle = '" + vari.RQD.Tables[0].Rows[0][18].ToString() + "';", connection1);
                     var DataSet2 = new DataSet();
                     DB.Fill(DataSet2, "*");
 

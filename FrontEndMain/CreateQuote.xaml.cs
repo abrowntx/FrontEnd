@@ -87,8 +87,19 @@ namespace FrontEndMain
 
             if (vari.Recall == true)
             {
-                QueryExistingDetails();
+                QED();
+                //QueryExistingDetails();
             }
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            if (isFirstTime)
+            {
+                isFirstTime = false;
+                CloseAdders();
+            }
+            isFirstTime = true;
         }
 
         //PUBLIC FORM VARIABLES
@@ -96,6 +107,41 @@ namespace FrontEndMain
         public bool isFirstTime = true;
         public bool DeleteAdders = false;
         public string FileName;
+
+
+        private void QED()
+        {
+            myComboBox.Text = vari.RQD.Tables[0].Rows[0][1].ToString();
+            myComboBox.IsDropDownOpen = false;
+            tbQty1.Text = vari.RQD.Tables[0].Rows[0][4].ToString();
+            tbQty2.Text = vari.RQD.Tables[0].Rows[0][5].ToString();
+            tbQty3.Text = vari.RQD.Tables[0].Rows[0][6].ToString();
+            tbQty4.Text = vari.RQD.Tables[0].Rows[0][7].ToString();
+
+            lq1.Text = vari.RQD.Tables[0].Rows[0][8].ToString();
+            lq1.Text = vari.RQD.Tables[0].Rows[0][9].ToString();
+            lq1.Text = vari.RQD.Tables[0].Rows[0][10].ToString();
+            lq1.Text = vari.RQD.Tables[0].Rows[0][11].ToString();
+
+            tbSeg.Text = vari.RQD.Tables[0].Rows[0][12].ToString();
+            cmbLockup.Text = vari.RQD.Tables[0].Rows[0][13].ToString();
+            tbDia.Text = vari.RQD.Tables[0].Rows[0][14].ToString();
+            tbWidth.Text = vari.RQD.Tables[0].Rows[0][15].ToString();
+            tbWatts.Text = vari.RQD.Tables[0].Rows[0][16].ToString();
+            tbVolts.Text = vari.RQD.Tables[0].Rows[0][17].ToString();
+
+            cmbTermStyle.Text = vari.RQD.Tables[0].Rows[0][18].ToString();
+            tbLeads.Text = vari.RQD.Tables[0].Rows[0][19].ToString();
+            tbLeadCov.Text = vari.RQD.Tables[0].Rows[0][20].ToString();
+            cmbTermLoc.Text = vari.RQD.Tables[0].Rows[0][21].ToString();
+            tbTermMeasure.Text = vari.RQD.Tables[0].Rows[0][22].ToString();
+
+            tbHoles.Text = vari.RQD.Tables[0].Rows[0][23].ToString();
+            tbCutouts.Text = vari.RQD.Tables[0].Rows[0][24].ToString();
+            tbMulti.Text = vari.RQD.Tables[0].Rows[0][25].ToString();
+            tbManualAdder.Text = vari.RQD.Tables[0].Rows[0][30].ToString();
+            tbSpecials.Text = vari.RQD.Tables[0].Rows[0][31].ToString();
+        }
 
         private void QueryExistingDetails()
         {
@@ -498,6 +544,11 @@ namespace FrontEndMain
             tbWidth.Text = null;
             tbWatts.Text = null;
             tbVolts.Text = null;
+            tbg1.Text = null;
+            tbg2.Text = null; tbg2.Visibility = Visibility.Hidden;
+            tbg3.Text = null; tbg3.Visibility = Visibility.Hidden;
+            tbg4.Text = null; tbg4.Visibility = Visibility.Hidden;
+
             tbLeads.Text = null;
             tbLeadCov.Text = null;
             tbTermMeasure.Text = null;
@@ -522,17 +573,6 @@ namespace FrontEndMain
             Q_Adders Q = new Q_Adders();
             Q.ShowDialog();
         }
-
-        private void Window_Activated(object sender, EventArgs e)
-        {
-            if (isFirstTime)
-            {
-                isFirstTime = false;
-                CloseAdders();
-            }
-            isFirstTime = true;
-        }
-
 
         private void AddersCalc2()
         {
@@ -738,14 +778,70 @@ namespace FrontEndMain
             }
         }
 
-        private void btnClearForm_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             vari.Recall = false;
         }
+
+        private void tbSeg_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int seg = 0;
+            int.TryParse(tbSeg.Text, out seg);
+            string g1 = tbg1.Text;
+            string g2 = tbg2.Text;
+            string g3 = tbg3.Text;
+            string g4 = tbg4.Text;
+            switch (seg)
+            {
+                case 0:
+                    MessageBox.Show("Please enter a numeric value between 1 and 4 for segments");
+                    break;
+                case 1:
+                    tbg1.Visibility = Visibility.Visible;
+                    tbg1.Text = "0.38";
+                    tbg2.Visibility = Visibility.Hidden;
+                    tbg2.Text = "0.00";
+                    tbg3.Visibility = Visibility.Hidden;
+                    tbg3.Text = "0.00";
+                    tbg4.Visibility = Visibility.Hidden;
+                    tbg4.Text = "0.00";
+                    break;
+                case 2:
+                    tbg1.Visibility = Visibility.Visible;
+                    tbg1.Text = "0.38";
+                    tbg2.Visibility = Visibility.Visible;
+                    tbg2.Text = "0.38";
+                    tbg3.Visibility = Visibility.Hidden;
+                    tbg3.Text = "0.00";
+                    tbg4.Visibility = Visibility.Hidden;
+                    tbg4.Text = "0.00";
+                    break;
+                case 3:
+                    tbg1.Visibility = Visibility.Visible;
+                    tbg1.Text = "0.38";
+                    tbg2.Visibility = Visibility.Visible;
+                    tbg2.Text = "0.38";
+                    tbg3.Visibility = Visibility.Visible;
+                    tbg3.Text = "0.38";
+                    tbg4.Visibility = Visibility.Hidden;
+                    tbg4.Text = "0.00";
+                    break;
+                case 4:
+                    tbg1.Visibility = Visibility.Visible;
+                    tbg1.Text = "0.38";
+                    tbg2.Visibility = Visibility.Visible;
+                    tbg2.Text = "0.38";
+                    tbg3.Visibility = Visibility.Visible;
+                    tbg3.Text = "0.38";
+                    tbg4.Visibility = Visibility.Visible;
+                    tbg4.Text = "0.38";
+                    break;
+                case 5:
+                    MessageBox.Show("Please enter a numeric value between 1 and 4 for segments");
+                    break;
+            }
+        }
+       
     }
 }

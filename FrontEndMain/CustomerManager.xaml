@@ -8,21 +8,21 @@
         Title="Customer Manager" Height="650" Width="1200"
         WindowStartupLocation="Manual" 
         Left="40" Top="10"
-        ResizeMode="CanResize" Background="#FFEAE7E2" Activated="Window_Activated">
+        ResizeMode="CanResize" Background="#FFD9DAD9" Activated="Window_Activated">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Customer" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="8" Margin="10,64,0,0" VerticalAlignment="Top" Width="1174" Fill="#FFC3B7AF" StrokeThickness="0">
+        <Rectangle HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="1192" Fill="#FFC5C4C1" StrokeThickness="0">
             <Rectangle.Effect>
                 <DropShadowEffect BlurRadius="0" Direction="270" ShadowDepth="0" Color="#7F000000"/>
             </Rectangle.Effect>
         </Rectangle>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Customer" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0"/>
         <ListBox x:Name="lbCust" HorizontalAlignment="Left" Height="514" Margin="12,100,0,0" VerticalAlignment="Top" Width="507" BorderBrush="White" SelectionChanged="lbCust_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding CustName}" FontSize="16"></TextBlock>
-                        <TextBlock Text="{Binding CustType}" FontSize="16" Margin="300,0,0,0"></TextBlock>
-                        <TextBlock Text="{Binding Multi}" FontSize="16" Margin="425,0,0,0"></TextBlock>
+                        <TextBlock Text="{Binding CustName}" FontSize="14"/>
+                        <TextBlock Text="{Binding CustType}" FontSize="14" Margin="300,0,0,0"/>
+                        <TextBlock Text="{Binding Multi}" FontSize="14" Margin="425,0,0,0"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -31,7 +31,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="316,81,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="439,81,0,0" TextWrapping="Wrap" Text="Multiplier" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="Manager" VerticalAlignment="Top" FontSize="30" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178"/>
-        <ListBox x:Name="lbCustDetails" HorizontalAlignment="Left" Height="514" Margin="524,100,0,0" VerticalAlignment="Top" Width="660" BorderBrush="#FFEAE7E2" Background="#FFEAE7E2">
+        <ListBox x:Name="lbCustDetails" HorizontalAlignment="Left" Height="514" Margin="524,100,0,0" VerticalAlignment="Top" Width="660" BorderBrush="{x:Null}" Background="#FFD9DAD9">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -58,9 +58,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="btnModifyCust" Content="Modify Existing&#xD;&#xA;Customer" HorizontalAlignment="Left" Margin="874,4,0,0" VerticalAlignment="Top" Width="152" Height="55" FontSize="18" FontWeight="Bold" Background="#FFAFD4E2" BorderBrush="#FFAFD4E2" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnModifyCust_Click"/>
-        <Button x:Name="btnNewCustomer" Content="Create New&#xA;Customer" HorizontalAlignment="Left" Margin="717,4,0,0" VerticalAlignment="Top" Width="152" Height="55" FontSize="18" FontWeight="Bold" Background="#FFBDE4B8" BorderBrush="#FFBDE4B8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnNewCustomer_Click"/>
-        <Button x:Name="btnDelete" Content="Delete&#xD;&#xA;Customer" HorizontalAlignment="Left" Margin="1032,4,0,0" VerticalAlignment="Top" Width="152" Height="55" FontSize="18" FontWeight="Bold" Background="#FFF0BDB8" BorderBrush="#FFF0BDB8" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelete_Click"/>
+        <Button x:Name="btnModifyCust" Content="Modify Existing&#xA;Customer" HorizontalAlignment="Left" Margin="866,7,0,0" VerticalAlignment="Top" Width="160" Height="55" FontSize="18" FontWeight="Bold" Background="#FF6A8195" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnModifyCust_Click" Foreground="#FFD9DAD9"/>
+        <Button x:Name="btnNewCustomer" Content="Create New&#xA;Customer" HorizontalAlignment="Left" Margin="714,7,0,0" VerticalAlignment="Top" Width="155" Height="55" FontSize="18" FontWeight="Bold" Background="#FF689564" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnNewCustomer_Click" Foreground="#FFD9DAD9"/>
+        <Button x:Name="btnDelete" Content="Delete&#xA;Customer" HorizontalAlignment="Left" Margin="1023,7,0,0" VerticalAlignment="Top" Width="161" Height="55" FontSize="18" FontWeight="Bold" Background="#FF904E55" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnDelete_Click" Foreground="#FFD9DAD9"/>
 
     </Grid>
 </Window>

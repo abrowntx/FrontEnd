@@ -429,14 +429,14 @@ namespace FrontEndMain
             {
                 vari.rIndex = lbCust.Items.IndexOf(lbCust.SelectedItem);
                 DataRowView drv = (DataRowView)lbCust.SelectedItem;
-                vari.rSelect = drv[1].ToString();
+                vari.drvSel = drv[1].ToString();
                 //CHECK IF INDEX SELECTED IS ZERO
-                if (vari.rIndex < 0 || vari.rSelect == "")
+                if (vari.rIndex < 0 || vari.drvSel == "")
                 {
                     vari.rTempCust = "";
                     return;
                 }
-                vari.rTempCust = " WHERE Cust = '" + vari.rSelect + "'";
+                vari.rTempCust = " WHERE Cust = '" + vari.drvSel + "'";
                 lbQuotes.DataContext = null;
                 lbQuotes.ItemsSource = null;
                 QueryDetails();

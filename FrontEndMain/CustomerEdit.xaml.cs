@@ -37,7 +37,6 @@ namespace FrontEndMain
             cmbStamp.Items.Add("Customer Name, EZ Number, W/V/D");
             cmbStamp.Items.Add("Customer Name, Customer Number, W/V/D");
             cmbStamp.Items.Add("No EZ Heat, Customer Number, W/V/D");
-            cmbStamp.Items.Add("Customer Name, Customer Number, W/V/D, Telephone");
 
             if (vari.ModCust == true)
             {
@@ -66,7 +65,7 @@ namespace FrontEndMain
                 {
                     connection1.Open();
                     // Query the database to find all entries without a FINISH TIME
-                    OleDbCommand CheckMulti = new OleDbCommand("SELECT ID,CustName,CustType,Multi,Phone,Fax,Add1,Add2,Add3,Add4,Add5,Stamp FROM CustomerList WHERE CustName = '" + vari.CustSelect + "';", connection1);
+                    OleDbCommand CheckMulti = new OleDbCommand("SELECT * FROM CustomerList WHERE CustName = '" + vari.CustSelect + "';", connection1);
                     OleDbDataReader reader = CheckMulti.ExecuteReader();
                     while (reader.Read())
                     {
@@ -81,6 +80,7 @@ namespace FrontEndMain
                         cmbAdd4.Text = reader[9].ToString();
                         cmbAdd5.Text = reader[10].ToString();
                         cmbStamp.Text = reader[11].ToString();
+                        tbL4.Text = reader[12].ToString();
                     }
                     reader.Close();
 
@@ -205,7 +205,7 @@ namespace FrontEndMain
                         // Query the database to find all entries without a FINISH TIME
                         OleDbCommand CheckMulti = new OleDbCommand("UPDATE CustomerList SET CustName = '" + tbName.Text +"',CustType = '" + cmbType.Text +"',Multi = '" + tbMulti.Text +"'," +
                             "Phone = '" + tbPhone.Text +"',Fax = '" + tbFax.Text +"',Add1 = '" + cmbAdd1.Text +"',Add2 = '" + cmbAdd2.Text + "',Add3 = '" + cmbAdd3.Text + "'," +
-                            "Add4 = '" + cmbAdd4.Text + "',Add5 = '" + cmbAdd5.Text + "',Stamp = '" + cmbStamp.Text + "' WHERE CustName = '" + vari.CustSelect + "';", connection1);
+                            "Add4 = '" + cmbAdd4.Text + "',Add5 = '" + cmbAdd5.Text + "',Stamp = '" + cmbStamp.Text + "', line4= '" + tbL4.Text + "' WHERE CustName = '" + vari.CustSelect + "';", connection1);
                         OleDbDataReader reader = CheckMulti.ExecuteReader();
 
                     }

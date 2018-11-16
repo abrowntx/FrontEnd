@@ -64,16 +64,20 @@ namespace FrontEndMain
 
         //QUOTE RECALLER
         public static int rIndex;
-        public static string rSelect;
+        public static string drvSel;
         public static string rDep;
+        public static string rPre;
         public static string rTempStr;
         public static string rTempCust;
         public static int rQuoteID;
         public static string[] rQD;
         public static bool Recall;
+        public static DataRowView drvSelect;
+        public static DataSet RQD;
 
         //PART CREATION
         public static string filenumber;
         public static bool filegen;
     }
+
 }
