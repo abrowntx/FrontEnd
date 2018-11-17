@@ -25,8 +25,22 @@ namespace FrontEndMain
 
 //PUBLIC VARIABLES
         public int Code;
-        
-//FILL CUSTOMERS PANEL
+
+        //MOVE TO NEXT FORM OBJECT ON ENTER KEY PRESS
+        private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            var uie = e.OriginalSource as UIElement;
+            if (e.Key == Key.Enter)
+            { e.Handled = true; uie.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next)); }
+        }
+        //CLOSE THE CURRENT WINDOW ON ESCAPE KEY PRESS - ASSOCIATE EVENT WITH WINDOW COMPONENT
+        private void escape(object sender, KeyEventArgs e)
+        {
+            var uie = e.OriginalSource as UIElement;
+            if (e.Key == Key.Escape) { this.Close(); }
+        }
+
+        //FILL CUSTOMERS PANEL
         private void QueryCustList(string Query)
         {
             // SET THE DATABASE CONNECTION VARS
@@ -149,7 +163,6 @@ namespace FrontEndMain
             //    s = s + "     [" + i + "] - " + vari.drvSelect[i].ToString();
             //}
             FillDetails(vari.rDep, vari.rIndex, vari.rPre, " WHERE id = " + vari.drvSelect[0].ToString() + "");
-
 
             vari.Recall = true;
             CreateQuote CMBQ = new CreateQuote();

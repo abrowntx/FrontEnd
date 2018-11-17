@@ -8,7 +8,7 @@
         Title="GENERATE PART - Mica Band"  Height="833.333" Width="702.5"
         WindowStartupLocation="Manual" 
         Left="165" Top="55"
-        ResizeMode="CanMinimize" Background="#FF9E9B99" Activated="Window_Activated">
+        ResizeMode="CanMinimize" Background="#FF9E9B99" Activated="Window_Activated" PreviewKeyDown="escape">
     <Grid>
         <Rectangle Fill="#FFD9DAD9" HorizontalAlignment="Left" Height="426" Margin="27,310,0,0" StrokeThickness="0" VerticalAlignment="Top" Width="643"/>
         <Rectangle Fill="#FFD9DAD9" HorizontalAlignment="Left" Height="223" Margin="27,76,0,0" StrokeThickness="0" VerticalAlignment="Top" Width="643"/>
@@ -71,15 +71,15 @@
         <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbConstr" HorizontalAlignment="Left" Margin="238,413,0,0" VerticalAlignment="Top" Width="100" Height="23" BorderThickness="0" FontSize="14" BorderBrush="#FFBF7878" SelectionChanged="cmbConstr_SelectionChanged"/>
         <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbHoles" HorizontalAlignment="Left" Height="23" Margin="343,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
         <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbNotches" HorizontalAlignment="Left" Height="23" Margin="448,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
-        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG1" HorizontalAlignment="Left" Height="23" Margin="234,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG1" HorizontalAlignment="Left" Height="23" Margin="246,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
 
-        <TextBlock x:Name="lG1" HorizontalAlignment="Left" Margin="234,436,0,0" TextWrapping="Wrap" Text="gap 1" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
-        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG2" HorizontalAlignment="Left" Height="23" Margin="289,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
-        <TextBlock x:Name="lG2" HorizontalAlignment="Left" Margin="289,436,0,0" TextWrapping="Wrap" Text="gap 2" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
-        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG3" HorizontalAlignment="Left" Height="23" Margin="344,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
-        <TextBlock x:Name="lG3" HorizontalAlignment="Left" Margin="344,436,0,0" TextWrapping="Wrap" Text="gap 3" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
-        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG4" HorizontalAlignment="Left" Height="23" Margin="400,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
-        <TextBlock x:Name="lG4" HorizontalAlignment="Left" Margin="400,436,0,0" TextWrapping="Wrap" Text="gap 4" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock x:Name="lG1" HorizontalAlignment="Left" Margin="246,436,0,0" TextWrapping="Wrap" Text="gap 1" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG2" HorizontalAlignment="Left" Height="23" Margin="301,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="lG2" HorizontalAlignment="Left" Margin="301,436,0,0" TextWrapping="Wrap" Text="gap 2" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG3" HorizontalAlignment="Left" Height="23" Margin="356,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="lG3" HorizontalAlignment="Left" Margin="356,436,0,0" TextWrapping="Wrap" Text="gap 3" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG4" HorizontalAlignment="Left" Height="23" Margin="412,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="lG4" HorizontalAlignment="Left" Margin="412,436,0,0" TextWrapping="Wrap" Text="gap 4" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
         <ListBox x:Name="lbAdders" HorizontalAlignment="Left" Height="105" Margin="38,498,0,0" VerticalAlignment="Top" Width="307" BorderBrush="White" PreviewKeyDown="Grid_PreviewKeyDown"/>
         <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbNotes" HorizontalAlignment="Left" Height="105" Margin="355,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="White" FontSize="14"/>
         <Button x:Name="btnSaveQuote" Content="save part" HorizontalAlignment="Left" Margin="532,741,0,0" VerticalAlignment="Top" Width="141" Height="56" FontSize="18" FontWeight="Bold" Background="#FF3E593B" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click" Foreground="#FFE5E6E4"/>
@@ -111,6 +111,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="456,263,0,0" TextWrapping="Wrap" Text="line 4" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" FontStyle="Italic"/>
         <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbStamp" HorizontalAlignment="Left" Margin="39,240,0,0" VerticalAlignment="Top" Width="203" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="cmbStamp_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="41,220,0,0" TextWrapping="Wrap" Text="customer default stamp" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbBHBase" HorizontalAlignment="Left" Height="23" Margin="140,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" BorderBrush="{x:Null}" FontSize="14" Background="{x:Null}" Foreground="#FF9E9B99"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbBHSuffix" HorizontalAlignment="Left" Height="23" Margin="211,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" BorderBrush="{x:Null}" FontSize="14" Background="{x:Null}" Foreground="#FF9E9B99"/>
+        <TextBlock HorizontalAlignment="Left" Margin="113,456,0,0" TextWrapping="Wrap" Text="BH" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="22" FontStyle="Italic" Foreground="#FF9E9B99"/>
 
     </Grid>
 </Window>

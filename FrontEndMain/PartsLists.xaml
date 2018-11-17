@@ -8,7 +8,7 @@
         Title="PartsLists" Height="850" Width="1250" Background="#FFF9F9F9"
         WindowStartupLocation="Manual" 
         Left="15" Top="0"
-        ResizeMode="CanResize">
+        ResizeMode="CanResize" PreviewKeyDown="escape">
     <Grid>
         <Button x:Name="btnMicaBand" Grid.Column="0" Grid.Row="0" Content="BH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="51" Height="33" FontSize="18" Background="#FF428BCA" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnMicaBand_Click" Foreground="#FFFFFDF4" FontWeight="Bold"/>
         <Button x:Name="btnMicaStrip" Grid.Column="0" Grid.Row="0" Content="SH" HorizontalAlignment="Left" Margin="51,0,0,0" VerticalAlignment="Top" Width="51" Height="33" FontSize="18" Background="#FF428BCA" BorderBrush="{x:Null}" BorderThickness="0" FontStyle="Italic" Click="btnMicaStrip_Click" Foreground="#FFFFFDF4" FontWeight="Bold"/>
@@ -24,8 +24,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding id}" FontSize="1"/>
-                        <TextBlock Text="{Binding file}" FontSize="12" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding id}" FontSize="8"/>
+                        <TextBlock Text="{Binding file}" FontSize="12" Margin="45,0,0,0"/>
                         <TextBlock Text="{Binding cust}" FontSize="12" Margin="100,0,0,0"/>
                         <TextBlock Text="{Binding pn}" FontSize="12" Margin="300,0,0,0"/>
                         <TextBlock Text="{Binding qbpn}" FontSize="12" Margin="425,0,0,0"/>
@@ -34,10 +34,18 @@
                         <TextBlock Text="{Binding dia, StringFormat='{}{0:#,0.00}'}" FontSize="12" Margin="615,0,0,0"/>
                         <TextBlock Text="x" FontSize="12" Margin="645,0,0,0"/>
                         <TextBlock Text="{Binding wid, StringFormat='{}{0:#,0.00}'}" FontSize="12" Margin="660,0,0,0"/>
-                        <TextBlock Text="{Binding termstyle}" FontSize="12" Margin="690,0,0,0"/>
+                        <TextBlock Text="{Binding stampoverride}" FontSize="12" Margin="690,0,0,0"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="cmEditPart" Header="Edit Part Details" Click="cm_EditPart"/>
+                    <MenuItem x:Name="cmCreateSimilarPart" Header="Create Similar Part" Click="cm_CreateSimilar"/>
+                    <Separator />
+                    <MenuItem x:Name="cmDeleteQuote" Header="Delete Part Entry" Click="cm_DeletePart"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
         <ListBox x:Name="lbCB" HorizontalAlignment="Left" Height="776" Margin="10,38,0,0" VerticalAlignment="Top" Width="1222" Visibility="Collapsed">
             <ListBox.ItemTemplate>

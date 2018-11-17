@@ -104,8 +104,8 @@
     <Compile Include="PartsLists.xaml.cs">
       <DependentUpon>PartsLists.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsLists_MicaBand.xaml.cs">
-      <DependentUpon>PartsLists_MicaBand.xaml</DependentUpon>
+    <Compile Include="PartsList_MicaBand.xaml.cs">
+      <DependentUpon>PartsList_MicaBand.xaml</DependentUpon>
     </Compile>
     <Compile Include="QuoteViewer.xaml.cs">
       <DependentUpon>QuoteViewer.xaml</DependentUpon>
@@ -184,7 +184,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsLists_MicaBand.xaml">
+    <Page Include="PartsList_MicaBand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

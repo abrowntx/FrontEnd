@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Recall an Existing Quote" Height="850" Width="1200" Background="#FFE5E6E4"
         WindowStartupLocation="Manual" 
-        Left="120" Top="50">
+        Left="120" Top="50" PreviewKeyDown="escape">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

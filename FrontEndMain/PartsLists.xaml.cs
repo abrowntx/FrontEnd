@@ -75,6 +75,20 @@ namespace FrontEndMain
             lbMisc.Visibility = Visibility.Collapsed;
         }
 
+        //MOVE TO NEXT FORM OBJECT ON ENTER KEY PRESS
+        private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            var uie = e.OriginalSource as UIElement;
+            if (e.Key == Key.Enter)
+            { e.Handled = true; uie.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next)); }
+        }
+        //CLOSE THE CURRENT WINDOW ON ESCAPE KEY PRESS - ASSOCIATE EVENT WITH WINDOW COMPONENT
+        private void escape(object sender, KeyEventArgs e)
+        {
+            var uie = e.OriginalSource as UIElement;
+            if (e.Key == Key.Escape) { this.Close(); }
+        }
+
         private void FillList(string table, int index)
         {
             // SET THE DATABASE CONNECTION VARS
@@ -194,5 +208,80 @@ namespace FrontEndMain
             TextConc("M", "Miscellaneous Heater Parts List");
             FillList("MList", 6);
         }
+
+//MAIN DATABASE QUERY FUNCTION
+        private void FillDetails(string Dep, int C, string prefix, string Query)
+        {
+            vari.rIndex = C;
+            vari.rDep = Dep;
+            vari.rPre = prefix;
+            // SET THE DATABASE CONNECTION VARS
+            string file = vari.DefaultDirectory + "Lists.accdb";
+            string ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source =" + file + ";";
+
+            // Attempt to connect to the database
+            using (var connection1 = new OleDbConnection(ConnectionString))
+            {
+                OleDbCommand OComm = new OleDbCommand();
+                OComm.Connection = connection1;
+                try
+                {
+                    connection1.Open();
+                    // Query the database to find all entries without a FINISH TIME
+                    OleDbDataAdapter DA = new OleDbDataAdapter("SELECT * FROM " + Dep + Query + ";", connection1);
+                    var DataSet = new DataSet();
+                    DA.Fill(DataSet, "*");
+                    if (vari.Recall == true)
+                    {
+                        vari.RQD = null;
+                        vari.RQD = DataSet;
+                        vari.Recall = false;
+                    }
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message); }
+                finally
+                { connection1.Close(); }
+            }
+        }
+
+
+        //PART EDIT AND GENERATION FUNCTIONS
+
+        private void CreateNewPart()
+        {
+            //Break functiion if listbox selection is null
+            if (lbBH.SelectedItem == null) { return; }
+
+            vari.Recall = true;
+            vari.drvSelect = (DataRowView)lbBH.SelectedItem;
+            //MessageBox.Show(vari.drvSelect[1].ToString());
+            FillDetails("BHList", vari.rIndex, vari.rPre, " WHERE file = '" + vari.drvSelect[1].ToString() + "'");
+            PartsList_MicaBand PLMB = new PartsList_MicaBand();
+            PLMB.ShowDialog();
+        }
+
+
+        //CONTEXT MENU FUNCTIONS
+        //MICA BAND LIST FUNCTIONS
+        private void cm_EditPart(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                CreateNewPart();
+            }
+        }
+
+        private void cm_CreateSimilar(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cm_DeletePart(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

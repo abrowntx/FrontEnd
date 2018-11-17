@@ -74,16 +74,18 @@ namespace FrontEndMain
             CustomerDetails();
         }
 
+        //MOVE TO NEXT FORM OBJECT ON ENTER KEY PRESS
         private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             var uie = e.OriginalSource as UIElement;
             if (e.Key == Key.Enter)
-            {
-                e.Handled = true;
-                uie.MoveFocus(
-                new TraversalRequest(
-                FocusNavigationDirection.Next));
-            }
+            { e.Handled = true; uie.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next)); }
+        }
+        //CLOSE THE CURRENT WINDOW ON ESCAPE KEY PRESS - ASSOCIATE EVENT WITH WINDOW COMPONENT
+        private void escape(object sender, KeyEventArgs e)
+        {
+            var uie = e.OriginalSource as UIElement;
+            if (e.Key == Key.Escape) { this.Close(); }
         }
 
         private void Startup()
@@ -273,14 +275,17 @@ namespace FrontEndMain
 
         private void FinalCheck()
         {
-            // SET THE DATABASE CONNECTION VARS
+        //CHECK FOR STAMPING STYLE
+            if (cmbStamp.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a stamping style");
+                return;
+            }
+        //CHECK THAT THE CHOSEN FILE NUMBER DOES NOT EXIST
             string file = vari.DefaultDirectory + "Lists.accdb"; string ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source =" + file + ";";
-
-            // Attempt to connect to the database
             using (var connection1 = new OleDbConnection(ConnectionString))
             {
-                OleDbCommand OComm = new OleDbCommand();
-                OComm.Connection = connection1;
+                OleDbCommand OComm = new OleDbCommand(); OComm.Connection = connection1;
                 try
                 {
                     connection1.Open();
@@ -294,18 +299,97 @@ namespace FrontEndMain
                         MessageBox.Show("There's already a record of the part number that you've selected. Please change the part number and try saving the record again.");
                         return;
                     }
-
+                    //CALL WRITE FUNCTION
+                    PartWriter();
                 }
-                catch (Exception ex)
-                { MessageBox.Show(ex.Message); }
-                finally
-                { connection1.Close(); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); } finally { connection1.Close(); }
+                OleDbCommand Write = new OleDbCommand(); Write.Connection = connection1;
             }
             //vari.filenumber = tbQB_Copy.Text;
             this.Close();
         }
 
-        private void btnBH_Click(object sender, RoutedEventArgs e)
+
+//WRITE A FRESH RECORD
+        private void PartWriter()
+        {
+            string file = vari.DefaultDirectory + "Lists.accdb"; string ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source =" + file + ";";
+            using (var connection1 = new OleDbConnection(ConnectionString))
+            {
+                OleDbCommand OComm = new OleDbCommand(); OComm.Connection = connection1;
+                try
+                {
+                    connection1.Open();
+                    string CmdLine1 = "INSERT INTO BHList (" +
+                        "file, cust, pn, qbpn, notes, custpn, seg, locku, dia, wid, termstyle, watts, volts, leads, leadcov, dte, ezleg, gap, qby, base, suffix, g1, g2, g3, g4, termloc, " +
+                        "termdet, wiring, constr, holes, notches, dsc, ad1, ad2, ad3, ad4, ad5, ad6, stmp1, stmp2, stmp3, stmp4, quoterefid, qbdesc, stampoverride) " +
+                        "VALUES (" +
+                        "'" + tbBH.Text + "', " +
+                        "'" + tbCust.Text + "', " +
+                        "'" + tbPN.Text + "', " +
+                        "'" + tbQB.Text + "', " +
+                        "'" + tbNotes.Text + "', " +
+                        "'" + tbCustPN.Text + "', " +
+                        "'" + tbSeg.Text + "', " +
+                        "'" + tbLock.Text + "', " +
+                        tbDia.Text + ", " + //number
+                        tbWid.Text + ", " + //number
+                        "'" + tbTerm.Text + "', " +
+                        tbWatts.Text + ", " + //number
+                        tbVolts.Text + ", " + //number
+                        tbLeads.Text + ", " + //number
+                        "'" + tbLeadcov.Text + "', " +
+                        "'" + tbDate.Text + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + tbBHBase.Text + "', " +
+                        "'" + tbBHSuffix.Text + "', " +
+                        "'" + tbG1.Text + "', " +
+                        "'" + tbG2.Text + "', " +
+                        "'" + tbG3.Text + "', " +
+                        "'" + tbG4.Text + "', " +
+                        "'" + cmbTermLoc.SelectedItem.ToString() + "', " +
+                        "'" + tbTermLoc.Text + "', " +
+                        "'" + cmbWiring.SelectedItem.ToString() + "', " +
+                        "'" + cmbConstr.SelectedItem.ToString() + "', " +
+                        "'" + tbHoles.Text + "', " +
+                        "'" + tbNotches.Text + "', " +
+                        "'" + tbDesc.Text + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + "" + "', " +
+                        "'" + tbS1.Text + "', " +
+                        "'" + tbS2.Text + "', " +
+                        "'" + tbS3.Text + "', " +
+                        "'" + tbS4.Text + "', " +
+                        "'" + tbID.Text + "', " +
+                        "'" + "" + "', " +
+                        "'" + cmbStamp.SelectedItem.ToString() + "'" +
+                        ");";
+
+                    //tbDesc.Text = CmdLine1;
+                    OleDbCommand Insert1 = new OleDbCommand(CmdLine1, connection1);
+                    Insert1.ExecuteNonQuery();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                finally { connection1.Close(); }
+                OleDbCommand Write = new OleDbCommand(); Write.Connection = connection1;
+            }
+            //this.Close();
+        }
+
+
+                        
+
+
+
+
+
+    private void btnBH_Click(object sender, RoutedEventArgs e)
         {
             NumberGen NG = new NumberGen();
             NG.Show();
@@ -319,6 +403,29 @@ namespace FrontEndMain
         private void tbBH_TextChanged(object sender, TextChangedEventArgs e)
         {
             Stamp(cmbStamp.SelectedItem.ToString());
+            //Break down BH Number for individual DB columns
+            if (tbBH.Text == "")
+            { return; }
+            else
+            {
+                string BH = tbBH.Text;
+                string b = "";
+                string s = "";
+                int l = BH.Length;
+                if (l < 9 || l > 10 ) { return; }
+                if (l == 9)
+                {
+                    b = BH.Substring(2, 4);
+                    s = BH.Substring(7, 2);
+                }
+                else
+                {
+                    b = BH.Substring(2, 5);
+                    s = BH.Substring(8, 2);
+                }
+                tbBHBase.Text = b;
+                tbBHSuffix.Text = s;
+            }
         }
 
         private void tbCustPN_TextChanged(object sender, TextChangedEventArgs e)

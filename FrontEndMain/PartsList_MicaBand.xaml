@@ -1,0 +1,118 @@
+﻿<Window x:Class="FrontEndMain.PartsList_MicaBand"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndMain"
+        mc:Ignorable="d"
+Title="MODIFY/CREATE PART - Mica Band"  Height="833.333" Width="702.5"
+        WindowStartupLocation="Manual" 
+        Left="165" Top="55"
+        ResizeMode="CanMinimize" Background="#FF9E9B99" Activated="Window_Activated" PreviewKeyDown="escape">
+    <Grid>
+        <Rectangle Fill="#FFD9DAD9" HorizontalAlignment="Left" Height="426" Margin="27,310,0,0" StrokeThickness="0" VerticalAlignment="Top" Width="643"/>
+        <Rectangle Fill="#FFD9DAD9" HorizontalAlignment="Left" Height="223" Margin="27,76,0,0" StrokeThickness="0" VerticalAlignment="Top" Width="643"/>
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Modify" VerticalAlignment="Top" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="178" Margin="11,0,0,0" Foreground="#FFE5E6E4"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mica Band" VerticalAlignment="Top" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="350" Margin="336,12,0,0" TextAlignment="Right" Foreground="#FFE5E6E4"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,79,0,0" TextWrapping="Wrap" Text="customer" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="247,79,0,0" TextWrapping="Wrap" Text="date quoted" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="182" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,79,0,0" TextWrapping="Wrap" Text="quote id ref" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,126,0,0" TextWrapping="Wrap" Text="bh number" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="188" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="114,310,0,0" TextWrapping="Wrap" Text="seg" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="158,310,0,0" TextWrapping="Wrap" Text="lock" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,334,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="6" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="202,310,0,0" TextWrapping="Wrap" Text="dia" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="264,310,0,0" TextWrapping="Wrap" Text="wid" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="319,310,0,0" TextWrapping="Wrap" Text="term" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="365,310,0,0" TextWrapping="Wrap" Text="watts" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="97" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="469,310,0,0" TextWrapping="Wrap" Text="volts" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="97" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="-64,396,0,0" TextWrapping="Wrap" Text="part details" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold" Width="171" RenderTransformOrigin="0.502,0.181" FontStyle="Italic" Foreground="#FFD9DAD9">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="131,356,0,0" TextWrapping="Wrap" Text="lead length" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="151" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="237,356,0,0" TextWrapping="Wrap" Text="lead covering" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="101" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,481,0,0" TextWrapping="Wrap" Text="adders" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="188" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="343,356,0,0" TextWrapping="Wrap" Text="term loc" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="145" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="447,358,0,0" TextWrapping="Wrap" Text="degree" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="152" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="247,126,0,0" TextWrapping="Wrap" Text="ez part number" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="182" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,126,0,0" TextWrapping="Wrap" Text="qb part number" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="131,396,0,0" TextWrapping="Wrap" Text="wiring style" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="145" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="238,396,0,0" TextWrapping="Wrap" Text="construction" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="145" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="355,481,0,0" TextWrapping="Wrap" Text="special notes" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="188" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,31,0,0" TextWrapping="Wrap" Text="New Part Entry" VerticalAlignment="Top" FontSize="28" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" Width="224" Foreground="#FFE5E6E4"/>
+
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbCust" HorizontalAlignment="Left" Height="23" Margin="40,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbDate" HorizontalAlignment="Left" Height="23" Margin="248,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbBH" HorizontalAlignment="Left" Height="23" Margin="41,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderBrush="White" FontSize="14" TextChanged="tbBH_TextChanged"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbPN" HorizontalAlignment="Left" Height="23" Margin="248,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbQB" HorizontalAlignment="Left" Height="23" Margin="457,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbCustPN" HorizontalAlignment="Left" Height="23" Margin="40,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="White" FontSize="14" TextChanged="tbCustPN_TextChanged"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbSeg" HorizontalAlignment="Left" Height="23" Margin="113,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbLock" HorizontalAlignment="Left" Height="23" Margin="157,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbDia" HorizontalAlignment="Left" Height="23" Margin="201,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbWid" HorizontalAlignment="Left" Height="23" Margin="263,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbTerm" HorizontalAlignment="Left" Height="23" Margin="318,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbWatts" HorizontalAlignment="Left" Height="23" Margin="362,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbVolts" HorizontalAlignment="Left" Height="23" Margin="466,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbLeads" HorizontalAlignment="Left" Height="23" Margin="132,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbLeadcov" HorizontalAlignment="Left" Height="23" Margin="238,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbTermLoc" HorizontalAlignment="Left" Margin="343,373,0,0" VerticalAlignment="Top" Width="100" Height="23" BorderThickness="0" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbTermLoc" HorizontalAlignment="Left" Height="23" Margin="448,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbWiring" HorizontalAlignment="Left" Margin="131,413,0,0" VerticalAlignment="Top" Width="101" Height="23" BorderThickness="0" FontSize="14" BorderBrush="#FFBF7878"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbConstr" HorizontalAlignment="Left" Margin="238,413,0,0" VerticalAlignment="Top" Width="100" Height="23" BorderThickness="0" FontSize="14" BorderBrush="#FFBF7878" SelectionChanged="cmbConstr_SelectionChanged"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbHoles" HorizontalAlignment="Left" Height="23" Margin="343,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbNotches" HorizontalAlignment="Left" Height="23" Margin="448,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" BorderBrush="White" FontSize="14"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG1" HorizontalAlignment="Left" Height="23" Margin="234,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+
+        <TextBlock x:Name="lG1" HorizontalAlignment="Left" Margin="234,436,0,0" TextWrapping="Wrap" Text="gap 1" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG2" HorizontalAlignment="Left" Height="23" Margin="289,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="lG2" HorizontalAlignment="Left" Margin="289,436,0,0" TextWrapping="Wrap" Text="gap 2" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG3" HorizontalAlignment="Left" Height="23" Margin="344,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="lG3" HorizontalAlignment="Left" Margin="344,436,0,0" TextWrapping="Wrap" Text="gap 3" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbG4" HorizontalAlignment="Left" Height="23" Margin="400,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="White" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="lG4" HorizontalAlignment="Left" Margin="400,436,0,0" TextWrapping="Wrap" Text="gap 4" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="50" TextAlignment="Center" FontStyle="Italic"/>
+        <ListBox x:Name="lbAdders" HorizontalAlignment="Left" Height="105" Margin="38,498,0,0" VerticalAlignment="Top" Width="307" BorderBrush="White" PreviewKeyDown="Grid_PreviewKeyDown"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbNotes" HorizontalAlignment="Left" Height="105" Margin="355,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="White" FontSize="14"/>
+        <Button x:Name="btnSaveQuote" Content="save part" HorizontalAlignment="Left" Margin="532,741,0,0" VerticalAlignment="Top" Width="141" Height="56" FontSize="18" FontWeight="Bold" Background="#FF3E593B" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnSaveQuote_Click" Foreground="#FFE5E6E4"/>
+        <Button x:Name="btnClose" Content="close" HorizontalAlignment="Left" Margin="24,741,0,0" VerticalAlignment="Top" Width="141" Height="56" FontSize="18" FontWeight="Bold" Background="#FF3E3D3B" BorderBrush="{x:Null}" BorderThickness="0" RenderTransformOrigin="-0.437,-0.929" Click="btnClose_Click" Foreground="#FFD9DAD9"/>
+        <TextBox  x:Name="tbID" HorizontalAlignment="Left" Height="23" Margin="457,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="White" FontSize="14" IsEnabled="False"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbDesc" HorizontalAlignment="Left" Height="106" Margin="40,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="618" BorderBrush="{x:Null}" FontSize="14" TextAlignment="Center" Background="#FFD9DAD9"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,608,0,0" TextWrapping="Wrap" Text="description" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="188" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="342,396,0,0" TextWrapping="Wrap" Text="holes" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="152" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="447,396,0,0" TextWrapping="Wrap" Text="notches" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="152" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,171,0,0" TextWrapping="Wrap" Text="customer part number" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="247,171,0,0" TextWrapping="Wrap" Text="stamping information" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="-63,162,0,0" TextWrapping="Wrap" Text="file information" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold" Width="171" RenderTransformOrigin="0.502,0.181" FontStyle="Italic" Foreground="#FFD9DAD9">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbS1" HorizontalAlignment="Left" Height="23" Margin="249,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="{x:Null}" FontSize="14" TextAlignment="Center" FontFamily="Courier New" Text="EZ HEAT" Background="#FFE5E6E4" FontWeight="Bold"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbS2" HorizontalAlignment="Left" Height="23" Margin="249,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="{x:Null}" FontSize="14" TextAlignment="Center" FontFamily="Courier New" Text="BH1111-01" Background="#FFE5E6E4" FontWeight="Bold"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbS3" HorizontalAlignment="Left" Height="23" Margin="249,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="{x:Null}" FontSize="14" TextAlignment="Center" FontFamily="Courier New" Text="WATTS VOLTS DATE" Background="#FFE5E6E4" FontWeight="Bold"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbS4" HorizontalAlignment="Left" Height="23" Margin="249,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" BorderBrush="{x:Null}" FontSize="14" TextAlignment="Center" FontFamily="Courier New" Background="#FFE5E6E4" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,194,0,0" TextWrapping="Wrap" Text="line 1" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,217,0,0" TextWrapping="Wrap" Text="line 2" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,240,0,0" TextWrapping="Wrap" Text="line 3" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,263,0,0" TextWrapping="Wrap" Text="line 4" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="39" FontStyle="Italic"/>
+        <ComboBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="cmbStamp" HorizontalAlignment="Left" Margin="39,240,0,0" VerticalAlignment="Top" Width="203" Height="23" BorderThickness="0" FontSize="14" SelectionChanged="cmbStamp_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="41,220,0,0" TextWrapping="Wrap" Text="customer default stamp" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="181" FontStyle="Italic"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbBHBase" HorizontalAlignment="Left" Height="23" Margin="129,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" BorderBrush="{x:Null}" FontSize="14" Background="{x:Null}" Foreground="#FF9E9B99"/>
+        <TextBox PreviewKeyDown="Grid_PreviewKeyDown"  x:Name="tbBHSuffix" HorizontalAlignment="Left" Height="23" Margin="200,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" BorderBrush="{x:Null}" FontSize="14" Background="{x:Null}" Foreground="#FF9E9B99"/>
+        <TextBlock HorizontalAlignment="Left" Margin="102,456,0,0" TextWrapping="Wrap" Text="BH" VerticalAlignment="Top" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Width="22" FontStyle="Italic" Foreground="#FF9E9B99"/>
+
+    </Grid>
+</Window>
